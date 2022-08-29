@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-29T16:05:37.967Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="nmwIjel2x2ABtw-I_wK_" version="20.2.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-08-29T16:06:02.784Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="NrEE66M36bpPEWn-zeWD" version="20.2.3" type="github" pages="4">
   <diagram id="id5Ea1LoEQPweoLkF-Yk" name="Architecture">
     <mxGraphModel dx="2568" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -240,7 +240,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SbxPfKJdUK_U7GGdJQ7T" name="How K8s Resolves Ips">
-    <mxGraphModel dx="2428" dy="3153" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1718" dy="2724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -308,7 +308,7 @@
           <mxGeometry x="655" y="-990" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="iZMe-Ucd2AGIqdvTw847-1" value="&lt;h2&gt;Worker Node 1&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" parent="1" vertex="1">
-          <mxGeometry x="320" y="-340" width="160" height="60" as="geometry" />
+          <mxGeometry x="340" y="-340" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="iZMe-Ucd2AGIqdvTw847-8" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="500" y="-1014" width="148" height="54" as="geometry" />
