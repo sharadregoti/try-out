@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-29T15:59:30.666Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="Xc763hjRQBx6auJpqBnG" version="20.2.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-08-29T16:01:47.824Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="yMwlQTK3B96Nx5fXGPiG" version="20.2.3" type="github" pages="4">
   <diagram id="id5Ea1LoEQPweoLkF-Yk" name="Architecture">
     <mxGraphModel dx="2568" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -240,7 +240,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SbxPfKJdUK_U7GGdJQ7T" name="How K8s Resolves Ips">
-    <mxGraphModel dx="1573" dy="2637" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1718" dy="2724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -258,12 +258,6 @@
         </mxCell>
         <mxCell id="4bZ6VNV_56yymwDryI18-5" value="&lt;h4&gt;my-app&lt;br&gt;(Pod)&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" parent="1" vertex="1">
           <mxGeometry x="680" y="-960" width="80" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="4bZ6VNV_56yymwDryI18-6" value="&lt;h4&gt;my-nginx&lt;br&gt;(Service)&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" parent="1" vertex="1">
-          <mxGeometry x="204" y="-250" width="80" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="4bZ6VNV_56yymwDryI18-7" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Cluster IP: 10.78.9.3&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="184" y="-280" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="e5Ggf4KuEvgSH4PyXK04-3" value="" style="endArrow=none;html=1;rounded=0;fontSize=10;dashed=1;" parent="1" target="iZMe-Ucd2AGIqdvTw847-44" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -336,9 +330,6 @@
             <mxPoint x="720" y="-920" as="sourcePoint" />
             <mxPoint x="720.45" y="-520" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="iZMe-Ucd2AGIqdvTw847-17" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Maps static IP addresses with &lt;br&gt;temporary IP addresses of pods&lt;br&gt;for routing purposes&lt;br&gt;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="315" y="-270" width="170" height="60" as="geometry" />
         </mxCell>
         <mxCell id="iZMe-Ucd2AGIqdvTw847-29" value="" style="endArrow=none;html=1;rounded=0;fontSize=10;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="iZMe-Ucd2AGIqdvTw847-42" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -459,6 +450,15 @@
         </mxCell>
         <mxCell id="mp-UsFM7ttxtWTVMHW3v-6" value="&lt;h1&gt;4&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="510" y="-610" width="31" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4bZ6VNV_56yymwDryI18-6" value="&lt;h4&gt;my-app&lt;br&gt;(Service)&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" parent="1" vertex="1">
+          <mxGeometry x="441" y="-860" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4bZ6VNV_56yymwDryI18-7" value="&lt;span style=&quot;background-color: rgb(102, 255, 255);&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Cluster IP:&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 10px;&quot;&gt;10.43.5.6&lt;/span&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="421" y="-890" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iZMe-Ucd2AGIqdvTw847-17" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Maps static IP addresses with &lt;br&gt;temporary IP addresses of pods&lt;br&gt;for routing purposes&lt;br&gt;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="590" y="-870" width="170" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
