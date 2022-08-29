@@ -1,0 +1,17 @@
+{
+	"ulid": "01GAXR2F4401J0CGYA1DMZ2RYV",
+	"minTime": 1660992370282,
+	"maxTime": 1660996800000,
+	"stats": {
+		"numSamples": 79824,
+		"numSeries": 283,
+		"numChunks": 566
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GAXR2F4401J0CGYA1DMZ2RYV"
+		]
+	},
+	"version": 1
+}
