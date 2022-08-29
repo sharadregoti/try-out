@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-29T15:56:01.727Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="8iYiJCM1u7hYnL5OIcUi" version="20.2.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-08-29T15:56:11.864Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="Zq0Gcf90Lcz09GQiQ09X" version="20.2.3" type="github" pages="4">
   <diagram id="id5Ea1LoEQPweoLkF-Yk" name="Architecture">
     <mxGraphModel dx="2568" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -448,8 +448,8 @@
         <mxCell id="mp-UsFM7ttxtWTVMHW3v-2" value="&lt;font color=&quot;#000000&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontFamily=Comic Sans MS;fontColor=#FFFFFF;labelBackgroundColor=none;" vertex="1" connectable="0" parent="1">
           <mxGeometry x="619.9952620992723" y="-569.9985330018283" as="geometry" />
         </mxCell>
-        <mxCell id="mp-UsFM7ttxtWTVMHW3v-3" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;Goes To Other Worker Node&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="643" y="-585" width="170" height="30" as="geometry" />
+        <mxCell id="mp-UsFM7ttxtWTVMHW3v-3" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;Checks Other Worker Node&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="648" y="-585" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="mp-UsFM7ttxtWTVMHW3v-4" value="&lt;h1&gt;2&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="124" y="-820" width="31" height="30" as="geometry" />
