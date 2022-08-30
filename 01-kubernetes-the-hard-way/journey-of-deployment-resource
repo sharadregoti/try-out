@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-08-30T08:08:36.043Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="d51vw_eJ89fFXG6HV5cW" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-30T08:10:15.199Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="bVIzFu265UUJgR41CF8W" version="20.2.7" type="github">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
-    <mxGraphModel dx="1518" dy="1503" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1718" dy="1624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,7 +31,7 @@
         <mxCell id="B7JjZLPrRbiMz8WdvFA6-11" value="&lt;h4&gt;scheduler&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#82b366;fillColor=#d5e8d4;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-560" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="B7JjZLPrRbiMz8WdvFA6-13" value="&lt;h4&gt;controller&lt;br&gt;manager&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#9673a6;fillColor=#e1d5e7;fillStyle=cross-hatch;" vertex="1" parent="1">
+        <mxCell id="B7JjZLPrRbiMz8WdvFA6-13" value="&lt;h3&gt;controller&lt;br&gt;manager&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#9673a6;fillColor=#e1d5e7;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-400" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="B7JjZLPrRbiMz8WdvFA6-14" style="edgeStyle=orthogonalEdgeStyle;curved=1;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;labelBorderColor=none;fontFamily=Comic Sans MS;" edge="1" parent="1" source="B7JjZLPrRbiMz8WdvFA6-15" target="B7JjZLPrRbiMz8WdvFA6-4">
@@ -73,10 +73,10 @@
         <mxCell id="B7JjZLPrRbiMz8WdvFA6-26" value="&lt;h4&gt;Kubectl&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#b85450;fillColor=#f8cecc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-640" y="-140" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="B7JjZLPrRbiMz8WdvFA6-27" value="&lt;h4&gt;Kubelet&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#b85450;fillColor=#f8cecc;fillStyle=cross-hatch;" vertex="1" parent="1">
+        <mxCell id="B7JjZLPrRbiMz8WdvFA6-27" value="&lt;h3&gt;Kubelet&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#b85450;fillColor=#f8cecc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-560" y="-260" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="B7JjZLPrRbiMz8WdvFA6-28" value="&lt;h4&gt;Kube Proxy&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#b85450;fillColor=#f8cecc;fillStyle=cross-hatch;" vertex="1" parent="1">
+        <mxCell id="B7JjZLPrRbiMz8WdvFA6-28" value="&lt;h3&gt;Kube&lt;br&gt;Proxy&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#b85450;fillColor=#f8cecc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-400" y="-260" width="80" height="60" as="geometry" />
         </mxCell>
       </root>
