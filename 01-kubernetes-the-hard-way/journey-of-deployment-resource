@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-06T09:50:42.227Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="vLV7VoLv0c_SaUqBWFTe" version="20.2.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-06T10:31:15.968Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="jj46WmGz_CoVL08fh6D6" version="20.2.8" type="github" pages="2">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
     <mxGraphModel dx="2523" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -273,7 +273,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-54" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Notify: New Deployment Created&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-53">
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-54" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px; background-color: rgb(204, 255, 255);&quot;&gt;Notify: New Deployment Created&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-53">
           <mxGeometry x="-0.2917" y="2" relative="1" as="geometry">
             <mxPoint x="-107" y="-10" as="offset" />
           </mxGeometry>
@@ -310,7 +310,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-60" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Notify: Pods Without Node Exists&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=none;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-59">
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-60" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Notify: Pods Without Node Exists&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=#CCFFFF;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-59">
           <mxGeometry x="-0.2917" y="2" relative="1" as="geometry">
             <mxPoint x="-163" y="-10" as="offset" />
           </mxGeometry>
@@ -347,7 +347,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-66" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Notify: Pods With Node Name&amp;nbsp; &amp;nbsp;&quot;node-1&quot; Exists&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=none;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-65">
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-66" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Notify: Pods With Node Name&amp;nbsp; &amp;nbsp;&quot;node-1&quot; Exists&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=15;labelBackgroundColor=#CCFFFF;" vertex="1" connectable="0" parent="UFmZfqzfYw3zYVtMyWTx-65">
           <mxGeometry x="-0.2917" y="2" relative="1" as="geometry">
             <mxPoint x="-302" y="-10" as="offset" />
           </mxGeometry>
