@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-06T09:21:25.201Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="9jH0fI0i5y0p34ThZdcq" version="20.2.8" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-06T09:22:08.666Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="18G77IG84XMVtJF0ZQdC" version="20.2.8" type="github">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
     <mxGraphModel dx="4822" dy="1936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -510,6 +510,9 @@
         </mxCell>
         <mxCell id="VgVWwaCRTSmuLOso4TIK-135" value="&lt;div style=&quot;text-align: left;&quot;&gt;Selects worker node on which pods&lt;br&gt;has to be scheduled on the basis of&lt;br&gt;&lt;b&gt;filtering &amp;amp; scoring&lt;/b&gt; process&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-135" y="266" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VgVWwaCRTSmuLOso4TIK-136" value="&lt;div style=&quot;text-align: left;&quot;&gt;Ensures deployment adheres&lt;br&gt;to the replica set number&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-295" y="157" width="180" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
