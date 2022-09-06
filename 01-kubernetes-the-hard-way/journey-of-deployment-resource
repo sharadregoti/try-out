@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-06T10:32:05.619Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="O6NMnkEBu3amhGs2FSvb" version="20.2.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-06T10:32:10.965Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="3PP_QBlABSetQy5Fq_nD" version="20.2.8" type="github" pages="2">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
     <mxGraphModel dx="2746" dy="1115" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -402,8 +402,8 @@
         <mxCell id="UFmZfqzfYw3zYVtMyWTx-75" value="&lt;div style=&quot;text-align: left;&quot;&gt;Ensures deployment adheres&lt;br&gt;to the replica set number&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
           <mxGeometry x="-115" y="627" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-76" value="&lt;div style=&quot;text-align: left;&quot;&gt;Uses containerd or any other&lt;br&gt;supported container runtime&lt;br&gt;for running containers&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="596" y="860" width="180" height="60" as="geometry" />
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-76" value="&lt;div style=&quot;text-align: left;&quot;&gt;Uses containerd or any other&lt;br&gt;supported container runtime&lt;br&gt;for running containers&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="591" y="860" width="190" height="60" as="geometry" />
         </mxCell>
         <mxCell id="UFmZfqzfYw3zYVtMyWTx-77" value="&lt;h2&gt;Master Node&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontFamily=Comic Sans MS;fontColor=#000000;" vertex="1" parent="1">
           <mxGeometry x="-195" y="300" width="150" height="70" as="geometry" />
