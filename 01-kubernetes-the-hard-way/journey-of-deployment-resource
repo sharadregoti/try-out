@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-06T04:23:06.219Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="8Lnm2dIeo7LAhq0pvYTI" version="20.2.8" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-06T04:23:20.849Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="rPF_17LN8y4YEebNqJHW" version="20.2.8" type="github">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
     <mxGraphModel dx="5073" dy="2084" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -276,10 +276,10 @@
         <mxCell id="VgVWwaCRTSmuLOso4TIK-38" value="&lt;h3&gt;ETCD&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-500" y="430" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VgVWwaCRTSmuLOso4TIK-39" value="&lt;h4&gt;core-dns&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" vertex="1" parent="1">
+        <mxCell id="VgVWwaCRTSmuLOso4TIK-39" value="&lt;h3&gt;API-Server&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-660" y="430" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VgVWwaCRTSmuLOso4TIK-40" value="&lt;h4&gt;my-nginx&lt;br&gt;(Pod)&lt;/h4&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" vertex="1" parent="1">
+        <mxCell id="VgVWwaCRTSmuLOso4TIK-40" value="&lt;h3&gt;Kubectl&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fontFamily=Comic Sans MS;strokeColor=#d79b00;fillColor=#ffe6cc;fillStyle=cross-hatch;" vertex="1" parent="1">
           <mxGeometry x="-941" y="430" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="VgVWwaCRTSmuLOso4TIK-41" value="&lt;h1&gt;1&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
