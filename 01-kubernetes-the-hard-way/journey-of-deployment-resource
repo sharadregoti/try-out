@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-06T10:31:15.968Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="jj46WmGz_CoVL08fh6D6" version="20.2.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-06T10:32:05.619Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="O6NMnkEBu3amhGs2FSvb" version="20.2.8" type="github" pages="2">
   <diagram id="j1amIRPmgZfbkRn8KeC_" name="Page-1">
-    <mxGraphModel dx="2523" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2746" dy="1115" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -396,10 +396,10 @@
         <mxCell id="UFmZfqzfYw3zYVtMyWTx-73" value="&lt;h1&gt;5&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="-435" y="814" width="31" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-74" value="&lt;div style=&quot;text-align: left;&quot;&gt;Selects worker node on which pods&lt;br&gt;has to be scheduled on the basis of&lt;br&gt;&lt;b&gt;filtering &amp;amp; scoring&lt;/b&gt; process&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="45" y="736" width="210" height="60" as="geometry" />
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-74" value="&lt;div style=&quot;text-align: left;&quot;&gt;Selects worker node on which pods&lt;br&gt;has to be scheduled on the basis of&lt;br&gt;&lt;b&gt;filtering &amp;amp; scoring&lt;/b&gt; process&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="40" y="736" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="UFmZfqzfYw3zYVtMyWTx-75" value="&lt;div style=&quot;text-align: left;&quot;&gt;Ensures deployment adheres&lt;br&gt;to the replica set number&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="UFmZfqzfYw3zYVtMyWTx-75" value="&lt;div style=&quot;text-align: left;&quot;&gt;Ensures deployment adheres&lt;br&gt;to the replica set number&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
           <mxGeometry x="-115" y="627" width="180" height="40" as="geometry" />
         </mxCell>
         <mxCell id="UFmZfqzfYw3zYVtMyWTx-76" value="&lt;div style=&quot;text-align: left;&quot;&gt;Uses containerd or any other&lt;br&gt;supported container runtime&lt;br&gt;for running containers&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
