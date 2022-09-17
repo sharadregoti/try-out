@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-17T03:47:41.951Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="4zt8qA_FNS8FihmWrxyp" version="20.3.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-17T03:48:16.608Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="8MmfjZ4v8tmP_uTAffP9" version="20.3.2" type="github" pages="2">
   <diagram id="8axJqOWe9oVHyAa5Vhfb" name="load-balancer">
     <mxGraphModel dx="694" dy="408" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -195,6 +195,9 @@
               <mxPoint x="709" y="581" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="Rk8lIxmU5taxAbVHkMfE-29" value="&lt;b&gt;10.2.1.1&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="666.4300000000001" y="540" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
