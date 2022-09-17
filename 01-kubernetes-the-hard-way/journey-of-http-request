@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-17T02:30:04.208Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="-ecEpmuRO2l6pbNTZaMb" version="20.3.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-17T02:47:34.480Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="jw1vir5esMNsTG2HMm1i" version="20.3.2" type="github" pages="2">
   <diagram id="8axJqOWe9oVHyAa5Vhfb" name="load-balancer">
     <mxGraphModel dx="1185" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -167,7 +167,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="bfIG5D0prPCNIa3dWnPw" name="Page-2">
-    <mxGraphModel dx="1497" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -222,49 +222,25 @@
         <mxCell id="JE-Jag-IKzCTBGF5RoGK-17" value="Nginx&lt;br&gt;Cluser IP:&amp;nbsp;&lt;b&gt;10.1.2.0&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-15">
           <mxGeometry x="-15" y="39" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-18" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="613.4300000000001" y="801" width="191" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-19" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-18">
-          <mxGeometry x="21" width="170" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" edge="1" parent="JE-Jag-IKzCTBGF5RoGK-18" source="JE-Jag-IKzCTBGF5RoGK-21" target="JE-Jag-IKzCTBGF5RoGK-24">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="JE-Jag-IKzCTBGF5RoGK-27" target="JE-Jag-IKzCTBGF5RoGK-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-21" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-18">
-          <mxGeometry y="18.5" width="30" height="83" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-22" value="NODE C" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-18">
-          <mxGeometry x="70" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-23" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" connectable="0" parent="JE-Jag-IKzCTBGF5RoGK-18">
-          <mxGeometry x="70" y="34" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-24" value="" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=pod;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-23">
-          <mxGeometry x="6.25" width="47.5" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-25" value="Nginx&lt;br&gt;Cluser IP:&amp;nbsp;&lt;b&gt;10.1.3.0&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-18">
-          <mxGeometry x="55" y="72.5" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" edge="1" parent="1" source="JE-Jag-IKzCTBGF5RoGK-27" target="JE-Jag-IKzCTBGF5RoGK-10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-27" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-27" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="613.4300000000001" y="540" width="30" height="83" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" edge="1" parent="1" source="JE-Jag-IKzCTBGF5RoGK-29" target="JE-Jag-IKzCTBGF5RoGK-16">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="JE-Jag-IKzCTBGF5RoGK-29" target="JE-Jag-IKzCTBGF5RoGK-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-29" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-29" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="613.4300000000001" y="679.5" width="30" height="83" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-30" value="192.168.0.1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-30" value="192.168.0.1" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="534.4300000000001" y="551" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-31" value="192.168.0.2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-31" value="192.168.0.2" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="535.4300000000001" y="649.5" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-32" value="192.168.0.3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-32" value="192.168.0.3" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="535.4300000000001" y="791" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JE-Jag-IKzCTBGF5RoGK-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" edge="1" parent="1" target="JE-Jag-IKzCTBGF5RoGK-29">
@@ -304,7 +280,7 @@
         <mxCell id="JE-Jag-IKzCTBGF5RoGK-42" value="Internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-40">
           <mxGeometry x="23" y="63.370000000000005" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JE-Jag-IKzCTBGF5RoGK-43" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-43" value="" style="group;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" connectable="0" parent="1">
           <mxGeometry x="376.43" y="692" width="64.5" height="91" as="geometry" />
         </mxCell>
         <mxCell id="JE-Jag-IKzCTBGF5RoGK-44" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.classic_load_balancer;fillColor=#F58534;gradientColor=none;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-43">
@@ -329,6 +305,27 @@
         </mxCell>
         <mxCell id="JE-Jag-IKzCTBGF5RoGK-50" value="&lt;b&gt;Mapping&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="192.47" y="661" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-19" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="634.4300000000001" y="801" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="JE-Jag-IKzCTBGF5RoGK-21" target="JE-Jag-IKzCTBGF5RoGK-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-21" value="&lt;b&gt;3&lt;br&gt;0&lt;br&gt;5&lt;br&gt;1&lt;br&gt;9&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="613.4300000000001" y="819.5" width="30" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-22" value="NODE C" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="683.4300000000001" y="801" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-23" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="683.4300000000001" y="835" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-24" value="" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=pod;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="JE-Jag-IKzCTBGF5RoGK-23">
+          <mxGeometry x="6.25" width="47.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JE-Jag-IKzCTBGF5RoGK-25" value="Nginx&lt;br&gt;Cluser IP:&amp;nbsp;&lt;b&gt;10.1.3.0&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="668.4300000000001" y="873.5" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
