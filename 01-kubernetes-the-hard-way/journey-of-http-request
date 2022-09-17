@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-17T08:12:14.493Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="xlkJhZCNMlxz7N2iKPwc" version="20.3.2" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-09-17T08:18:40.037Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="9_besl0fqNFhjxbRyalA" version="20.3.2" type="github" pages="3">
   <diagram id="8axJqOWe9oVHyAa5Vhfb" name="load-balancer">
     <mxGraphModel dx="1094" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -467,20 +467,32 @@
         <mxCell id="7Kk-6D64QCv5UKr0-Qku-2" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="3VX9X6cYVWqgZvfIuBBE-5" target="7Kk-6D64QCv5UKr0-Qku-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3VX9X6cYVWqgZvfIuBBE-5" value="Worker Node&lt;br&gt;192.168.0.1:30519" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="3VX9X6cYVWqgZvfIuBBE-5" value="Worker Node&lt;br&gt;&lt;br&gt;192.168.0.1:30519" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="500" y="404.37" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="7Kk-6D64QCv5UKr0-Qku-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="7Kk-6D64QCv5UKr0-Qku-1" target="7Kk-6D64QCv5UKr0-Qku-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7Kk-6D64QCv5UKr0-Qku-1" value="Worker Node IP Table&lt;br&gt;&lt;br&gt;NodeIP -&amp;gt; Cluster IP" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-1" value="Worker Node IP Table&lt;br&gt;&lt;br&gt;NodeIP -&amp;gt; Cluster IP" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="130" y="480" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7Kk-6D64QCv5UKr0-Qku-3" value="Worker Node IP Table&lt;br&gt;&lt;br&gt;Cluster IP -&amp;gt; Pod IP" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-3" value="Worker Node IP Table&lt;br&gt;&lt;br&gt;Cluster IP -&amp;gt; Pod IP" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="500" y="560" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="7Kk-6D64QCv5UKr0-Qku-5" value="http://myngix-app.com" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="220" y="190" width="140" height="30" as="geometry" />
+          <mxGeometry x="100" y="170.99" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-6" value="&lt;span style=&quot;color: rgb(68, 68, 68); text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;1234.ap-south-1.elb.amazonaws.com&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="20" y="313.37" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-7" value="&lt;h1&gt;1&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="130" y="200.99" width="31" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-8" value="&lt;h1&gt;2&lt;/h1&gt;" style="whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;strokeColor=default;fillColor=#FF0000;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="614.5" y="240" width="31" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7Kk-6D64QCv5UKr0-Qku-9" value="Resolve &quot;mynginx-app.com&quot; to&lt;br&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22http%3A%2F%2Fmyngix-app.com%22%20style%3D%22text%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Bresizable%3D0%3Bpoints%3D%5B%5D%3Bautosize%3D1%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3BfontSize%3D12%3BfontFamily%3DHelvetica%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22100%22%20y%3D%22170.99%22%20width%3D%22140%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3Emyngix-a&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;1234.ap-south-1.elb.amazonaws.com&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="520" y="195.99" width="220" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
