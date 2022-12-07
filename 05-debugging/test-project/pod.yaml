@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-debug-container
+  labels:
+    name: go-debug-container
+spec:
+  containers:
+  - name: go-debug-container
+    image: sharadregoti/test-project:0.1.0
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 4040
+      - containerPort: 8090
