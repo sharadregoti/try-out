@@ -2,13 +2,18 @@ package main
 
 import (
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
+
+
 
 func (a *Avenger) isAlive() {
 	a.Alive = true
 }
 
 func main() {
-	http.HandleFunc("/v1/avenger/{id}", getUsers)
-	http.ListenAndServe(":8090", nil)
+	r := mux.NewRouter()
+	r.HandleFunc("/v1/avenger/{id}", getAvenger)
+	http.ListenAndServe(":8090", r)
 }
