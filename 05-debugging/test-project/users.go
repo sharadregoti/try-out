@@ -35,6 +35,10 @@ var avengers = []Avenger{
 	},
 }
 
+func (a *Avenger) isAlive() {
+	a.Alive = true
+}
+
 func getAvenger(w http.ResponseWriter, req *http.Request) {
 
 	v := mux.Vars(req)

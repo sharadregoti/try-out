@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine3.14
+FROM golang:1.20-alpine3.14
 WORKDIR /build
 COPY . .
 RUN CGO_ENABLED=0 go install -ldflags "-s -w -extldflags '-static'" github.com/go-delve/delve/cmd/dlv@latest
