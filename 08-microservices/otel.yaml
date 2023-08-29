@@ -1,0 +1,26 @@
+# https://opentelemetry.io/docs/kubernetes/helm/
+# https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector
+# helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+# helm upgrade -i opentelemetry-collector open-telemetry/opentelemetry-collector --values otel.yaml
+mode: "deployment"
+config:
+  exporters:
+    jaeger:
+      endpoint: jaeger-collector:14250
+      tls:
+        insecure: true
+  processors:
+    batch: {}
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+          endpoint: ${env:MY_POD_IP}:4317
+        http:
+          endpoint: ${env:MY_POD_IP}:4318
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [batch]
+        exporters: [jaeger]

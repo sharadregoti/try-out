@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: loan-service
+  name: loan-service
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loan-service
+  template:
+    metadata:
+      labels:
+        app: loan-service
+    spec:
+      containers:
+        - image: loan_service:latest
+          imagePullPolicy: IfNotPresent
+          name: loan-service
+          ports:
+            - containerPort: 5000
+          env:
+            - name: "ACCOUNT_SERVICE_URL"
+              value: "http://account-service:5000"
+            - name: "INSURANCE_SERVICE_URL"
+              value: "http://insurance-service:5000"
+            - name: "OTEL_EXPORTER_OTLP_TRACES_ENDPOINT"
+              value: "http://opentelemetry-collector:4317"
+            - name: "OTEL_TRACES_EXPORTER"
+              value: "otlp"
+            - name: "OTEL_METRICS_EXPORTER"
+              value: "none"
+            - name: "OTEL_SERVICE_NAME"
+              value: "loan-service"
+            - name: "OTEL_PROPOGATORS"
+              value: "jaeger,tracecontext,baggage"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loan-service
+spec:
+  selector:
+    app: loan-service
+  ports:
+    - port: 5000
+      targetPort: 5000

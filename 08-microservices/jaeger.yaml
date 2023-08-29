@@ -1,0 +1,14 @@
+# https://github.com/jaegertracing/helm-charts
+# helm repo add jaegertracing https://jaegertracing.github.io/helm-charts
+# helm install jaeger jaegertracing/jaeger
+# helm upgrade -i jaeger jaegertracing/jaeger --values jaeger.yaml
+provisionDataStore:
+  cassandra: false
+query:
+  enabled: false
+collector:
+  enabled: false
+agent:
+  enabled: false
+allInOne:
+  enabled: true
