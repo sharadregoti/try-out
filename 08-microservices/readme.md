@@ -18,3 +18,6 @@
 - Install curl
 - `curl account-service:5000/getBalance/1`
 You should get this response `{"message":"Balance request received for account ID: 1!"}`
+
+# Output
+![image](https://github.com/sharadregoti/try-out/assets/24411676/382d2277-afed-4f21-b888-4ab872a464ab)
