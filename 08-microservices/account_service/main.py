@@ -1,10 +1,7 @@
-from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from flask import Flask, jsonify
 import os
 import requests
 import logging
-
-RequestsInstrumentor().instrument()
 
 app = Flask(__name__)
 
@@ -12,8 +9,8 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Retrieve the dependent service URL from an environment variable
-LOAN_SERVICE_URL = os.environ.get("LOAN_SERVICE_URL", "http://localhost:5000")
-INSURANCE_SERVICE_URL = os.environ.get("INSURANCE_SERVICE_URL", "http://localhost:5000")
+LOAN_SERVICE_URL = os.environ.get("LOAN_SERVICE_URL", "http://localhost:5002")
+INSURANCE_SERVICE_URL = os.environ.get("INSURANCE_SERVICE_URL", "http://localhost:5001")
 
 @app.route('/createAccount', methods=['POST'])
 def create_account():

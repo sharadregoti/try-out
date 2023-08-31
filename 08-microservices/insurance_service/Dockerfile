@@ -1,4 +1,3 @@
-# Use an official Python runtime as the base image
 FROM python:3.9-slim
 
 # Set the working directory in the container
@@ -9,6 +8,9 @@ COPY requirements.txt ./
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Auto install otel instrumentation libraries
+RUN opentelemetry-bootstrap -a install
 
 # Copy the local code to the container
 COPY . .

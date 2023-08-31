@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Retrieve the dependent service URL from an environment variable
 ACCOUNT_SERVICE_URL = os.environ.get("LOAN_SERVICE_URL", "http://localhost:5000")
-INSURANCE_SERVICE_URL = os.environ.get("INSURANCE_SERVICE_URL", "http://localhost:5000")
+INSURANCE_SERVICE_URL = os.environ.get("INSURANCE_SERVICE_URL", "http://localhost:5001")
 
 @app.route('/applyLoan', methods=['POST'])
 def apply_loan():
@@ -40,4 +40,4 @@ def calculate_emi():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5002)

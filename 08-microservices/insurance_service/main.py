@@ -12,7 +12,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Retrieve the dependent service URL from an environment variable
-LOAN_SERVICE_URL = os.environ.get("LOAN_SERVICE_URL", "http://localhost:5000")
+LOAN_SERVICE_URL = os.environ.get("LOAN_SERVICE_URL", "http://localhost:5002")
 ACCOUNT_SERVICE_URL = os.environ.get("INSURANCE_SERVICE_URL", "http://localhost:5000")
 
 @app.route('/buyInsurance', methods=['POST'])
@@ -36,4 +36,4 @@ def get_claim_status(claimId):
     return jsonify({'message': f'Claim status request received for claim ID: {claimId}!'}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
