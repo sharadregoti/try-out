@@ -1,6 +1,10 @@
+# Preqrequisites
+1. Install [TinyGo](https://tinygo.org/getting-started/)
+2. Install [Golang <1.18>](https://golang.org/doc/install)
+
 # Docker Enviornment
 
-## Build WASM Filter
+## Build WASM Filter (optional as build artifact named filter.wasm is already included)
 
 ```
 tinygo build -wasm-abi=generic -target=wasi -o filter.wasm filter.go
@@ -19,7 +23,7 @@ docker run \
 
 # Kubernetes Enviornment
 
-## Build WASM Filter
+## Build WASM Filter (optional as build artifact named filter.wasm is already included)
 
 ```
 tinygo build -wasm-abi=generic -target=wasi -o filter.wasm filter.go
