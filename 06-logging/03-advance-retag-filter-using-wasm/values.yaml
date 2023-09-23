@@ -1,0 +1,56 @@
+config:
+    inputs: |
+        [INPUT]
+            Name  tail
+            Tag   kube.*
+            Path  /var/log/containers/*default_app*
+            Exclude_Path  /var/log/containers/*default_fluent-bit*
+
+    filters: |
+        [FILTER]
+            Name   kubernetes
+            Match  kube.*
+        [FILTER]
+            Name wasm
+            match *
+            WASM_Path /fluent-bit/etc/wasm/config/filter.wasm
+            Function_Name go_filter
+        [FILTER]
+            Name   rewrite_tag
+            Match  kube.*
+            Rule   $new_tag private-a1-s3-ap-south-1 private-a1-s3-ap-south-1 false
+            Rule   $new_tag private-a1-elastic-ap-south-1 private-a1-elastic-ap-south-1 false
+            Rule   $new_tag general-s3-ap-south-1 general-s3-ap-south-1 false
+            Rule   $new_tag general-elastic-ap-south-1 general-elastic-ap-south-1 false
+            Rule   $new_tag general-s3 general-s3 false
+            Rule   $new_tag general-elastic general-elastic false
+
+    outputs: |
+        [OUTPUT]
+            Name  stdout
+            Match *
+        [OUTPUT]
+            Name  stdout
+            Match private-a1-s3-ap-south-1
+        [OUTPUT]
+            Name  stdout
+            Match private-a1-elastic-ap-south-1
+        [OUTPUT]
+            Name  stdout
+            Match general-s3-ap-south-1
+        [OUTPUT]
+            Name  stdout
+            Match general-elastic-ap-south-1
+        [OUTPUT]
+            Name  stdout
+            Match general-s3
+        [OUTPUT]
+            Name  stdout
+            Match general-elastic
+extraVolumes:
+    - name: wasm-filter
+      configMap:
+          name: wasm-filter
+extraVolumeMounts:
+    - name: wasm-filter
+      mountPath: /fluent-bit/etc/wasm/config

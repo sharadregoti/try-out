@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-1
+    region: ap-south-1
+    tenant: private-a1
+    has-sensitive-data: "true"
+  name: app-1
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-1
+  template:
+    metadata:
+      labels:
+        app: app-1
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: app-1
+          args: ["--loop", "--delay", "2"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-2
+    region: ap-south-1
+    has-sensitive-data: "false"
+  name: app-2
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-2
+  template:
+    metadata:
+      labels:
+        app: app-2
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: app-2
+          args: ["--loop", "--delay", "2"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-3
+    has-sensitive-data: "true"
+  name: app-3
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-3
+  template:
+    metadata:
+      labels:
+        app: app-3
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: app-3
+          args: ["--loop", "--delay", "2"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-4
+    region: us-west-1
+  name: app-4
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-4
+  template:
+    metadata:
+      labels:
+        app: app-4
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: app-4
+          args: ["--loop", "--delay", "2"]
+---
+
