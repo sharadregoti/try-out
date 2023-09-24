@@ -21,6 +21,9 @@ docker run \
   -c /fluent-bit/etc/fluent-bit.conf
 ```
 
+## Example Output
+[View the output](./example.output)
+
 # Kubernetes Enviornment
 
 ## Build WASM Filter (optional as build artifact named filter.wasm is already included)
