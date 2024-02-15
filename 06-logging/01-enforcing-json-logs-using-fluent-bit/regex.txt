@@ -1,0 +1,2 @@
+1. ^.*\[error\]\s\[filter:expect:[^\]]+\]\sexception\son\srule\s#[0-9]+\s'key_exists',\skey\s'[^']+'\snot\sfound.\s(.*\n{.*)
+2. ^.*\[error\]\s\[filter:expect:[^\]]+\]\sexception\son\srule\s#[0-9]+\s'key_exists',\skey\s'[^']+'\snot\sfound.\s(.*)

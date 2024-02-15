@@ -1,0 +1,8 @@
+docker run \
+  -v $(pwd)/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf \
+  -ti cr.fluentbit.io/fluent/fluent-bit:2.0 \
+  /fluent-bit/bin/fluent-bit \
+  -c /fluent-bit/etc/fluent-bit.conf
+
+docker run --rm --name fluent-bit  -v $(pwd)/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf   -ti cr.fluentbit.io/fluent/fluent-bit:2.0   /fluent-bit/bin/fluent-bit   -c /fluent-bit/etc/fluent-bit.conf
+

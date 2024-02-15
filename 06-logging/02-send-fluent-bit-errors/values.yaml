@@ -1,0 +1,14 @@
+config:
+  inputs: |
+    [INPUT]
+            Name  tail
+            Tag   kubernetes.containers*
+            Path  /var/log/containers/*logging*
+
+    [FILTER]
+            Name   kubernetes
+            Match  *
+
+    [OUTPUT]
+            Name   es
+            Match  *

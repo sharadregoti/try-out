@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: legacy-application
+  name: legacy-application
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legacy-application
+  template:
+    metadata:
+      labels:
+        app: legacy-application
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: legacy-application
+          args: ["--loop", "--delay", "2", "--format", "json"]

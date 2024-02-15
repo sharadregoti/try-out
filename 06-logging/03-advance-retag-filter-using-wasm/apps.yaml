@@ -17,6 +17,9 @@ spec:
     metadata:
       labels:
         app: app-1
+        region: ap-south-1
+        tenant: private-a1
+        has-sensitive-data: "true"
     spec:
       containers:
         - image: mingrammer/flog:0.4.3
@@ -41,6 +44,8 @@ spec:
     metadata:
       labels:
         app: app-2
+        region: ap-south-1
+        has-sensitive-data: "false"
     spec:
       containers:
         - image: mingrammer/flog:0.4.3
@@ -64,6 +69,7 @@ spec:
     metadata:
       labels:
         app: app-3
+        has-sensitive-data: "true"
     spec:
       containers:
         - image: mingrammer/flog:0.4.3
@@ -87,6 +93,7 @@ spec:
     metadata:
       labels:
         app: app-4
+        region: us-west-1
     spec:
       containers:
         - image: mingrammer/flog:0.4.3

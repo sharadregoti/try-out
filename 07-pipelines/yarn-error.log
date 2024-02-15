@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add @dagger.io/dagger --dev
+
+PATH: 
+  /usr/local/bin/aws_completer:/home/sharad/bin:/home/sharad/.local/lib/python3.8/site-packages:/home/sharad/.krew/bin:/home/sharad/binaries:/home/sharad/.local/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Java/jdk-17.0.1/bin:/mnt/c/Software/terraform_1.3.4:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Rancher Desktop/resources/resources/win32/bin/:/mnt/c/Program Files/Rancher Desktop/resources/resources/linux/bin/:/mnt/c/Users/sharad.regoti/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sharad.regoti/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin:/home/sharad/go/bin:/home/sharad/.yarn/bin:/home/sharad/bin:/usr/local/go/bin:/home/sharad/go/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
+
+npm manifest: 
+  {
+    "name": "dagger-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

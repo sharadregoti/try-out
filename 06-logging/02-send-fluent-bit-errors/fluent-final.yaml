@@ -1,0 +1,34 @@
+config:
+  inputs: |
+    [INPUT]
+            Name  tail
+            Tag   kube.*
+            Path  /var/log/containers/*.log
+            Exclude_Path  /var/log/containers/*default_fluent-bit*
+    [INPUT]
+            Name  tail
+            Tag   kube.fluent-bit*
+            Path  /var/log/containers/*default_fluent-bit*
+
+  filters: |
+    [FILTER]
+            Name   kubernetes
+            Match  kube.*
+    [FILTER]
+            Name   log_to_metrics
+            tag  failed.destination*
+            metric_mode  counter
+            metric_name  count_all_failed_destinations
+            metric_description  This metric counts failed destinations
+            Match  kube.fluent-bit*
+            regex  log \[.*error.*\].*output=es\.(0|1)
+
+  outputs: |
+    [OUTPUT]
+            Name   es
+            Match  kube.*
+    [OUTPUT]
+            name   prometheus_exporter
+            match  failed.destination*
+            host   0.0.0.0
+            port   2020

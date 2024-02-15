@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: non-json-logger
+  name: non-json-logger
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: non-json-logger
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: non-json-logger
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: non-json-logger
+          args: ["--loop", "--delay", "2"]
+          resources:
+            requests: # The amount of resource a container is guaranteed
+              cpu: "0.5"
+              memory: "100Mi"
+            limits: # The maximum amount a container can use
+              cpu: "1"
+              memory: "500Mi"
+status: {}

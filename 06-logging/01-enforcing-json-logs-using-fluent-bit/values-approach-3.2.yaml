@@ -1,0 +1,67 @@
+config:
+  customParsers: |
+    [MULTILINE_PARSER]
+        Name        fluent-bit-expect-log
+        type        regex
+        flush_timeout 1000
+        # The start state regex should match your error log line.
+        rule        "start_state"   "\[error\]\s\[filter:expect:[^\]]+\]\sexception\son\srule\s#[0-9]+\s'key_exists',\skey\s'[^']+'\snot\sfound." "cont"
+        # The continuation state should match the following log content.
+        rule        "cont"          "{\"time\":\".*\",\"stream\":\".*\",\"logtag\":\".*\",\"log\":\".*\"}"  "cont"
+    [PARSER]
+        Name         crijsonparser
+        Format       regex
+        Regex        ^(?<time>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
+        Decode_Field      json       log
+
+  inputs: |
+    [INPUT]
+        Name  tail
+        Tag   kube.*
+        Path  /var/log/containers/*default_*
+        Exclude_Path  /var/log/containers/*default_fluent-bit*
+        Parser crijsonparser
+
+    [INPUT]
+        Name  tail
+        Tag   fluent-bit*
+        Path  /var/log/containers/*default_fluent-bit*
+        multiline.parser  fluent-bit-expect-log
+
+  filters: |
+    [FILTER]
+        Name   kubernetes
+        Match  kube.*
+
+    [FILTER]
+        Name   expect
+        Match  kube.*
+        key_exists request
+
+    [FILTER]
+        Name   rewrite_tag
+        Match  fluent-bit*
+        Rule   log \[error\]\s\[filter:expect:[^\]]+\]\sexception\son\srule\s#[0-9]+\s'key_exists',\skey\s'[^']+'\snot\sfound\. failed.validation true
+        
+  outputs: |
+    # [OUTPUT]
+    #     name     stdout
+    #     match    kube.*
+
+    # [OUTPUT]
+    #     Name   es
+    #     Match  kube.*
+    #     Host elasticsearch-master
+    #     Logstash_Format On
+    #     Logstash_Prefix node
+    #     Retry_Limit False
+    #     tls     On
+    #     tls.verify Off
+    #     HTTP_User elastic
+    #     HTTP_Passwd 8Np5n1sqJf5hEidz
+    #     Suppress_Type_Name On
+
+    [OUTPUT]
+        name     slack
+        match    failed.validation
+        webhook  https://hooks.slack.com/services/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

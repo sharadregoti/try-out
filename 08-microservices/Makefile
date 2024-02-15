@@ -15,3 +15,10 @@ apply-jaeger:
 apply-otel-collector:
 	helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts;
 	helm upgrade -i opentelemetry-collector open-telemetry/opentelemetry-collector --values otel.yaml;
+
+delete:
+	kubectl delete -f account_service/deployment.yaml
+	kubectl delete -f insurance_service/deployment.yaml
+	kubectl delete -f loan_service/deployment.yaml
+	helm uninstall jaeger
+	helm uninstall opentelemetry-collector

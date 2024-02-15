@@ -1,0 +1,36 @@
+kube-state-metrics:
+  enabled: false
+prometheus-node-exporter:
+  enabled: false
+prometheus-pushgateway:
+  enabled: false
+alertmanager:
+  config:
+    receivers:
+      - name: default-receiver
+        slack_configs:
+          # Replace the slack URL
+          - api_url: https://hooks.slack.com/services/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
+            send_resolved: true
+serverFiles:
+  alerting_rules.yml:
+    groups:
+      - name: FailedDestination
+        rules:
+          - alert: FailedDestinationsAlert
+            expr: rate(log_metric_counter_count_all_failed_destinations[5m]) > 0
+            for: 5m
+            labels:
+              severity: critical
+            annotations:
+              summary: High rate of failed destinations
+              description: There is a high rate of failed destinations detected in the system.
+  prometheus.yml:
+    scrape_configs:
+      - job_name: fluent-bit
+        static_configs:
+          - targets:
+              - fluent-bit.default.svc.cluster.local:2020
+server:
+  global:
+    scrape_interval: 10s

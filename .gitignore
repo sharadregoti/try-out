@@ -1,1 +1,3 @@
 03-open-telemetry/monitoring/prometheus-instrumentation/data
+venv/
+node_modules/

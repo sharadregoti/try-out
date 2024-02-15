@@ -1,0 +1,44 @@
+config:
+  customParsers: |
+    [PARSER]
+        Name         crijsonparser
+        Format       regex
+        Regex        ^(?<time>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
+        Time_Key     time
+        Time_Format  %Y-%m-%dT %H:%M:%S.%L
+        Decode_Field_As      json       log
+
+  inputs: |
+    [INPUT]
+        Name  tail
+        Tag   kube.*
+        Path  /var/log/containers/*default_*
+        Exclude_Path  /var/log/containers/*default_fluent-bit*
+        Parser crijsonparser
+
+  filters: |
+    [FILTER]
+        Name   kubernetes
+        Match  kube.*
+    [FILTER]
+        Name   rewrite_tag
+        Match  kube.*
+        Rule   log ^(?!\s*[\[\{].*[\}\]]\s*$) failed.validation true
+
+  outputs: |
+    [OUTPUT]
+        Name   es
+        Match  kube.*
+        Host elasticsearch-master
+        Logstash_Format On
+        Logstash_Prefix node
+        Retry_Limit False
+        tls     On
+        tls.verify Off
+        HTTP_User elastic
+        HTTP_Passwd 8Np5n1sqJf5hEidz
+        Suppress_Type_Name On
+    [OUTPUT]
+        name     slack
+        match    failed.validation
+        webhook  https://hooks.slack.com/services/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

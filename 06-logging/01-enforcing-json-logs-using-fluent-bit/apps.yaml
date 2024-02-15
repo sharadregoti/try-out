@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: unstructured-logger
+  name: unstructured-logger
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unstructured-logger
+  template:
+    metadata:
+      labels:
+        app: unstructured-logger
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: unstructured-logger
+          args: ["--loop", "--delay", "2"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: structured-logger
+  name: structured-logger
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: structured-logger
+  template:
+    metadata:
+      labels:
+        app: structured-logger
+    spec:
+      containers:
+        - image: mingrammer/flog:0.4.3
+          name: structured-logger
+          args: ["--loop", "--delay", "2", "--format", "json"]
+---

@@ -1,0 +1,7 @@
+[2023/08/16 07:43:28] [error] [engine] chunk '1-1692171800.20024792.flb' cannot be retried: task_id=8, input=tail.0 > output=es.0
+[2023/08/16 07:43:28] [error] [engine] chunk '1-1692171800.20024792.flb' cannot be retried: task_id=8, input=tail.0 > output=es.1
+[2023/08/16 07:43:28] [warn] [engine] chunk '1-1692171800.20024792.flb' cannot be retried: task_id=8, input=tail.0 > output=es.0
+[2023/08/16 07:43:28] [warn] [engine] chunk '1-1692171800.20024792.flb' cannot be retried: task_id=8, input=tail.0 > output=es.1
+
+
+[2023/08/16 08:12:51] [error] [filter:kubernetes:kubernetes.0] incoming record tag (failed.destination) is shorter than kube_tag_prefix value (kube.var.log.containers.), skip filter                            

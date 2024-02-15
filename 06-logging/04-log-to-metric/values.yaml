@@ -1,0 +1,55 @@
+extraPorts: 
+  - port: 2021
+    containerPort: 2021
+    protocol: TCP
+    name: prometheus
+config:
+  customParsers: |
+    [PARSER]
+        Name         crijsonparser
+        Format       regex
+        Regex        ^(?<time>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
+        Decode_Field json log
+
+  inputs: |
+    [INPUT]
+        Name  tail
+        Tag   kube.*
+        Path  /var/log/containers/*default_legacy-application*
+        Parser crijsonparser
+
+  filters: |
+    [FILTER]
+        Name          rewrite_tag
+        Match         kube.*
+        Rule          log \"request\"\s*:\s*"\s*\/[^"]+"  http_requests_total true
+    [FILTER]
+        name               log_to_metrics
+        match              http_requests_total
+        tag                metrics
+        metric_mode        counter
+        metric_name        http_requests_total
+        metric_description This metric counts http requests
+
+    [FILTER]
+        Name          rewrite_tag
+        Match         kube.*
+        Rule          log \"status\"\s*:\s*5\d{2} http_status_500_total true
+    [FILTER]
+        name               log_to_metrics
+        match              http_status_500_total
+        tag                metrics
+        metric_mode        counter
+        metric_name        http_status_500_total
+        metric_description This metric counts http request with 500 status code in response
+
+  outputs: |
+    [OUTPUT]
+        name  prometheus_exporter
+        match metrics
+        host  0.0.0.0
+        port  2021
+
+    [OUTPUT]
+        name  stdout
+        match metrics

@@ -1,0 +1,28 @@
+docker run \
+  -v $(pwd)/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf \
+  -ti cr.fluentbit.io/fluent/fluent-bit:2.1.9 \
+  /fluent-bit/bin/fluent-bit \
+  -c /fluent-bit/etc/fluent-bit.conf
+
+docker run mingrammer/flog:0.4.3 --loop --delay 2 --format json
+
+docker run -d -p 9090:9090 \
+    -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+    prom/prometheus
+
+Note:
+From Logs, we can http error rate & request rate
+
+kubectl apply -f prometheus.deploy.yaml
+
+helm upgrade -i fluent-bit fluent/fluent-bit --values values.yaml
+
+kubectl apply -f legacy.yaml
+
+
+
+docker run \
+  -v $(pwd)/erik-fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf \
+  -ti cr.fluentbit.io/fluent/fluent-bit:2.1.9 \
+  /fluent-bit/bin/fluent-bit \
+  -c /fluent-bit/etc/fluent-bit.conf

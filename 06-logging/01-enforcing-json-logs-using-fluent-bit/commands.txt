@@ -1,0 +1,7 @@
+docker run \
+  -v $(pwd)/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf \
+  -ti cr.fluentbit.io/fluent/fluent-bit:2.0 \
+  /fluent-bit/bin/fluent-bit \
+  -c /fluent-bit/etc/fluent-bit.conf
+
+nice_dubinsky peaceful_cori dreamy_dhawan wizardly_dijkstra infallible_heisenberg epic_leavitt cool_spence festive_bardeen nifty_mcnulty distracted_hoover crazy_galileo reverent_northcutt frosty_farada 

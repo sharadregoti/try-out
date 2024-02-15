@@ -27,6 +27,8 @@ func go_filter(tag *uint8, tag_len uint, time_sec uint, time_nsec uint, record *
 		return nil
 	}
 
+	fmt.Println(obj.String())
+
 	kubernetesObj := obj.Get("kubernetes")
 	if kubernetesObj == nil {
 		s := obj.String()

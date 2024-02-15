@@ -1,0 +1,1 @@
+dagger run --focus node --loader ts-node/esm ./ci.mts

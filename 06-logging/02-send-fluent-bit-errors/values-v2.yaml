@@ -1,0 +1,39 @@
+config:
+  inputs: |
+    [INPUT]
+            Name  tail
+            Tag   kube.*
+            Path  /var/log/containers/*default_non-json-logger*
+            Exclude_Path  /var/log/containers/*default_fluent-bit*
+
+    [INPUT]
+            Name  tail
+            Tag   kube.fluent-bit*
+            Path  /var/log/containers/*default_fluent-bit*
+
+  filters: |
+    [FILTER]
+            Name   kubernetes
+            Match  kube.*
+
+    [FILTER]
+            Name   rewrite_tag
+            Match  kube.fluent-bit*
+            Rule   log \[.*error.*\].*output=es\.(0|1) failed.destination true
+
+    [FILTER]
+            Name   Throttle
+            match  failed.destination
+            Rate 1
+            Window 1
+            Interval 5m
+            
+  outputs: |
+    [OUTPUT]
+            Name   es
+            Match  kube.*
+
+    [OUTPUT]
+            name     slack
+            match    failed.destination
+            webhook  https://hooks.slack.com/services/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
