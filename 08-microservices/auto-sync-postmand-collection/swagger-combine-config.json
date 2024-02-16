@@ -1,0 +1,57 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Demo App",
+        "version": "1.0.0"
+    },
+    "host": "{{host}}",
+    "schemes": [
+        "https"
+    ],
+    "apis": [
+        {
+            "url": "./services/account-service/docs/swagger.json",
+            "paths": {
+                "useBasePath": true
+            },
+            "tags": {
+                "add": [
+                    "account-service"
+                ]
+            }
+        },
+        {
+            "url": "./services/card-service/docs/swagger.json",
+            "paths": {
+                "useBasePath": true
+            },
+            "tags": {
+                "add": [
+                    "card-service"
+                ]
+            }
+        },
+        {
+            "url": "./services/transfer-service/docs/swagger.json",
+            "paths": {
+                "useBasePath": true
+            },
+            "tags": {
+                "add": [
+                    "transfer-service"
+                ]
+            }
+        },
+        {
+            "url": "./services/master-service/docs/swagger.json",
+            "paths": {
+                "useBasePath": true
+            },
+            "tags": {
+                "add": [
+                    "master-service"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,1499 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is monak server.",
+        "title": "Monak Master Service API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/api/v1/master-service",
+    "paths": {
+        "/cities": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetCitiesHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "State name to filter",
+                        "name": "state_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CitiesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyCitiesHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.CitiesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CitiesRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/{cityId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletCityHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "City ID",
+                        "name": "cityId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/countries": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetCountriesHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CountriesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyCountriesHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.CountriesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CountriesRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/countries/{countryId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletCountryHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Country ID",
+                        "name": "countryId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/currencies": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetCurrenciesHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CurrenciesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyCurrenciesHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.CurrenciesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.CurrenciesRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/currencies/{currencyId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeleteCurrencysHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Currency ID",
+                        "name": "currencyId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/home": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetHomeScreenHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "lang code",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/db.ScreensResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/languages": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetLanguagesHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.LanguagesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyLanguagesHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.LanguagesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.LanguagesRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/languages/{languageId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeleteLanguagesHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Language ID",
+                        "name": "languageId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/onboardings": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetOnboardingHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "lang=en",
+                        "name": "lang",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.OnboardingResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyOnboardingHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.OnboardingRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.OnboardingRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/onboardings/{onboardingId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletOnboardingHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Onboarding ID",
+                        "name": "onboardingId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/screens": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetScreensHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "lang code",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/db.ScreensResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/screens/{screenId}": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetScreenByID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "lang code",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Screen ID",
+                        "name": "screenId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/db.ScreensResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/settings": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetSettingHandler",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.SettingResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplySettingHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.SettingRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.SettingRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/settings/{settingId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletSettingHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Setting ID",
+                        "name": "settingId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/sliders": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetSliderHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "location",
+                        "name": "location",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "start date",
+                        "name": "start_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "end date",
+                        "name": "end_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.SliderResposne"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplySliderHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.SliderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.SliderRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/sliders/{sliderId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletSliderHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Slider ID",
+                        "name": "sliderId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/states": {
+            "get": {
+                "description": "This is the first line",
+                "summary": "GetStatesHandler",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "sort order",
+                        "name": "sort_order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 10",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Country name to filter",
+                        "name": "country_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.StatesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This is the first line",
+                "summary": "ApplyStatesHandler",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.StatesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.StatesRequest"
+                        }
+                    }
+                }
+            }
+        },
+        "/states/{stateId}": {
+            "delete": {
+                "description": "This is the first line",
+                "summary": "DeletStateHandler",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "State ID",
+                        "name": "stateId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "customtypes.JSONB": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "db.Element": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "db.GetScreen": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "ui": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/db.UI"
+                    }
+                }
+            }
+        },
+        "db.ScreensResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/db.GetScreen"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "db.UI": {
+            "type": "object",
+            "properties": {
+                "collection": {
+                    "type": "string"
+                },
+                "elements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/db.Element"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "show_name": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.CitiesRequest": {
+            "type": "object",
+            "required": [
+                "cities"
+            ],
+            "properties": {
+                "cities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.City"
+                    }
+                }
+            }
+        },
+        "http.CitiesResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.City"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.City": {
+            "type": "object",
+            "required": [
+                "id",
+                "image",
+                "location",
+                "name",
+                "state_id",
+                "status",
+                "timezone"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "state_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                },
+                "timezone": {
+                    "type": "string"
+                }
+            }
+        },
+        "http.CountriesRequest": {
+            "type": "object",
+            "required": [
+                "countries"
+            ],
+            "properties": {
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Country"
+                    }
+                }
+            }
+        },
+        "http.CountriesResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Country"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.Country": {
+            "type": "object",
+            "required": [
+                "calling_code",
+                "code",
+                "currency_id",
+                "id",
+                "image",
+                "local_name",
+                "name",
+                "sort_order",
+                "status"
+            ],
+            "properties": {
+                "calling_code": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "currency_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "local_name": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "sort_order": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.CurrenciesRequest": {
+            "type": "object",
+            "required": [
+                "currencies"
+            ],
+            "properties": {
+                "currencies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Currency"
+                    }
+                }
+            }
+        },
+        "http.CurrenciesResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Currency"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.Currency": {
+            "type": "object",
+            "required": [
+                "code",
+                "decimal_place",
+                "id",
+                "name",
+                "status",
+                "symbol_left",
+                "symbol_right",
+                "value"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "decimal_place": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                },
+                "symbol_left": {
+                    "type": "string"
+                },
+                "symbol_right": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            }
+        },
+        "http.Language": {
+            "type": "object",
+            "required": [
+                "alphabet",
+                "code",
+                "color",
+                "id",
+                "image",
+                "locale",
+                "name",
+                "rtl",
+                "script_name",
+                "sort_order",
+                "status"
+            ],
+            "properties": {
+                "alphabet": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "locale": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "rtl": {
+                    "type": "boolean"
+                },
+                "script_name": {
+                    "type": "string"
+                },
+                "sort_order": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.LanguagesRequest": {
+            "type": "object",
+            "required": [
+                "languages"
+            ],
+            "properties": {
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Language"
+                    }
+                }
+            }
+        },
+        "http.LanguagesResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Language"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.Onboarding": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "language_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "http.OnboardingRequest": {
+            "type": "object",
+            "required": [
+                "onboardings"
+            ],
+            "properties": {
+                "onboardings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Onboarding"
+                    }
+                }
+            }
+        },
+        "http.OnboardingResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Onboarding"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.Setting": {
+            "type": "object",
+            "required": [
+                "id",
+                "key",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "value": {
+                    "$ref": "#/definitions/customtypes.JSONB"
+                }
+            }
+        },
+        "http.SettingRequest": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Setting"
+                    }
+                }
+            }
+        },
+        "http.SettingResponse": {
+            "type": "object",
+            "required": [
+                "settings"
+            ],
+            "properties": {
+                "settings": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
+        "http.Slider": {
+            "type": "object",
+            "required": [
+                "action",
+                "app_start",
+                "description",
+                "end_date",
+                "id",
+                "image",
+                "language_id",
+                "location",
+                "name",
+                "start_date",
+                "status"
+            ],
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "app_start": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "language_id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.SliderRequest": {
+            "type": "object",
+            "required": [
+                "sliders"
+            ],
+            "properties": {
+                "sliders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Slider"
+                    }
+                }
+            }
+        },
+        "http.SliderResposne": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.Slider"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.State": {
+            "type": "object",
+            "required": [
+                "code",
+                "country_id",
+                "created_at",
+                "id",
+                "name",
+                "status"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "country_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.StatesRequest": {
+            "type": "object",
+            "required": [
+                "states"
+            ],
+            "properties": {
+                "states": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.State"
+                    }
+                }
+            }
+        },
+        "http.StatesResponse": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.State"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                },
+                "next_cursor": {
+                    "type": "string"
+                },
+                "previous_cursor": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

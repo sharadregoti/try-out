@@ -1,0 +1,134 @@
+definitions:
+  http.Account:
+    properties:
+      balance_decimal_formatted:
+        type: string
+      balance_formatted:
+        type: string
+      balance_main_formatted:
+        type: string
+      balance_raw:
+        type: integer
+      country_flag:
+        type: string
+      created_at:
+        type: string
+      currency_symbol:
+        type: string
+      id:
+        type: string
+      kyc:
+        type: boolean
+      name:
+        type: string
+      number:
+        type: string
+      provider_id:
+        type: string
+      refreshed_at:
+        type: string
+      service_status:
+        type: integer
+      symbol_left:
+        type: boolean
+      symbol_right:
+        type: boolean
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  http.AccountsResponse:
+    properties:
+      accounts:
+        items:
+          $ref: "#/definitions/http.Account"
+        type: array
+      has_more:
+        type: boolean
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is monak server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Monak B2C API
+  version: "1.0"
+"basePath": "/api/v1/account-service"
+paths:
+  /accounts:
+    get:
+      consumes:
+        - application/json
+      description: Get accounts of a user
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: optional userId for testing
+          in: query
+          name: user_id
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.AccountsResponse"
+      security:
+        - Bearer: []
+      summary: GetAccounts
+  /accounts/{accountId}/transactions:
+    get:
+      consumes:
+        - application/json
+      description: Get accounts of a user
+      parameters:
+        - description: Account ID
+          in: path
+          name: accountId
+          required: true
+          type: string
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.AccountsResponse"
+      security:
+        - Bearer: []
+      summary: GetTransanctions
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

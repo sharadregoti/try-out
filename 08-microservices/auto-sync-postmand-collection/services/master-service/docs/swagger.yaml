@@ -1,0 +1,996 @@
+definitions:
+  customtypes.JSONB:
+    additionalProperties: true
+    type: object
+  db.Element:
+    properties:
+      action:
+        type: string
+      disabled:
+        type: boolean
+      id:
+        type: string
+      image:
+        type: string
+      name:
+        type: string
+    type: object
+  db.GetScreen:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      ui:
+        items:
+          $ref: "#/definitions/db.UI"
+        type: array
+    type: object
+  db.ScreensResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/db.GetScreen"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  db.UI:
+    properties:
+      collection:
+        type: string
+      elements:
+        items:
+          $ref: "#/definitions/db.Element"
+        type: array
+      id:
+        type: string
+      name:
+        type: string
+      show_name:
+        type: boolean
+    type: object
+  http.CitiesRequest:
+    properties:
+      cities:
+        items:
+          $ref: "#/definitions/http.City"
+        type: array
+    required:
+      - cities
+    type: object
+  http.CitiesResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.City"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.City:
+    properties:
+      id:
+        type: string
+      image:
+        type: string
+      location:
+        type: string
+      name:
+        type: string
+      state_id:
+        type: string
+      status:
+        type: boolean
+      timezone:
+        type: string
+    required:
+      - id
+      - image
+      - location
+      - name
+      - state_id
+      - status
+      - timezone
+    type: object
+  http.CountriesRequest:
+    properties:
+      countries:
+        items:
+          $ref: "#/definitions/http.Country"
+        type: array
+    required:
+      - countries
+    type: object
+  http.CountriesResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Country"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.Country:
+    properties:
+      calling_code:
+        type: string
+      code:
+        type: string
+      currency_id:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      local_name:
+        type: string
+      name:
+        type: string
+      sort_order:
+        type: integer
+      status:
+        type: boolean
+    required:
+      - calling_code
+      - code
+      - currency_id
+      - id
+      - image
+      - local_name
+      - name
+      - sort_order
+      - status
+    type: object
+  http.CurrenciesRequest:
+    properties:
+      currencies:
+        items:
+          $ref: "#/definitions/http.Currency"
+        type: array
+    required:
+      - currencies
+    type: object
+  http.CurrenciesResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Currency"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.Currency:
+    properties:
+      code:
+        type: string
+      decimal_place:
+        type: integer
+      id:
+        type: string
+      name:
+        type: string
+      status:
+        type: boolean
+      symbol_left:
+        type: string
+      symbol_right:
+        type: string
+      value:
+        type: number
+    required:
+      - code
+      - decimal_place
+      - id
+      - name
+      - status
+      - symbol_left
+      - symbol_right
+      - value
+    type: object
+  http.Language:
+    properties:
+      alphabet:
+        type: string
+      code:
+        type: string
+      color:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      locale:
+        type: string
+      name:
+        type: string
+      rtl:
+        type: boolean
+      script_name:
+        type: string
+      sort_order:
+        type: integer
+      status:
+        type: boolean
+    required:
+      - alphabet
+      - code
+      - color
+      - id
+      - image
+      - locale
+      - name
+      - rtl
+      - script_name
+      - sort_order
+      - status
+    type: object
+  http.LanguagesRequest:
+    properties:
+      languages:
+        items:
+          $ref: "#/definitions/http.Language"
+        type: array
+    required:
+      - languages
+    type: object
+  http.LanguagesResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Language"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.Onboarding:
+    properties:
+      color:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      language_id:
+        type: string
+      status:
+        type: boolean
+      title:
+        type: string
+    type: object
+  http.OnboardingRequest:
+    properties:
+      onboardings:
+        items:
+          $ref: "#/definitions/http.Onboarding"
+        type: array
+    required:
+      - onboardings
+    type: object
+  http.OnboardingResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Onboarding"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.Setting:
+    properties:
+      id:
+        type: string
+      key:
+        type: string
+      value:
+        $ref: "#/definitions/customtypes.JSONB"
+    required:
+      - id
+      - key
+      - value
+    type: object
+  http.SettingRequest:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Setting"
+        type: array
+    required:
+      - data
+    type: object
+  http.SettingResponse:
+    properties:
+      settings:
+        additionalProperties: true
+        type: object
+    required:
+      - settings
+    type: object
+  http.Slider:
+    properties:
+      action:
+        type: string
+      app_start:
+        type: boolean
+      description:
+        type: string
+      end_date:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      language_id:
+        type: string
+      location:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+      status:
+        type: boolean
+    required:
+      - action
+      - app_start
+      - description
+      - end_date
+      - id
+      - image
+      - language_id
+      - location
+      - name
+      - start_date
+      - status
+    type: object
+  http.SliderRequest:
+    properties:
+      sliders:
+        items:
+          $ref: "#/definitions/http.Slider"
+        type: array
+    required:
+      - sliders
+    type: object
+  http.SliderResposne:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.Slider"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - data
+    type: object
+  http.State:
+    properties:
+      code:
+        type: string
+      country_id:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      status:
+        type: boolean
+    required:
+      - code
+      - country_id
+      - created_at
+      - id
+      - name
+      - status
+    type: object
+  http.StatesRequest:
+    properties:
+      states:
+        items:
+          $ref: "#/definitions/http.State"
+        type: array
+    required:
+      - states
+    type: object
+  http.StatesResponse:
+    properties:
+      data:
+        items:
+          $ref: "#/definitions/http.State"
+        type: array
+      has_more:
+        type: boolean
+      next_cursor:
+        type: string
+      previous_cursor:
+        type: string
+    required:
+      - data
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is monak server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Monak Master Service API
+  version: "1.0"
+"basePath": "/api/v1/master-service"
+paths:
+  /cities:
+    get:
+      description: This is the first line
+      parameters:
+        - description: State name to filter
+          in: query
+          name: state_id
+          type: string
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CitiesResponse"
+      summary: GetCitiesHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.CitiesRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CitiesRequest"
+      summary: ApplyCitiesHandler
+  /cities/{cityId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: City ID
+          in: path
+          name: cityId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: DeletCityHandler
+  /countries:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CountriesResponse"
+      summary: GetCountriesHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.CountriesRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CountriesRequest"
+      summary: ApplyCountriesHandler
+  /countries/{countryId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Country ID
+          in: path
+          name: countryId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeletCountryHandler
+  /currencies:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CurrenciesResponse"
+      summary: GetCurrenciesHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.CurrenciesRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CurrenciesRequest"
+      summary: ApplyCurrenciesHandler
+  /currencies/{currencyId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Currency ID
+          in: path
+          name: currencyId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeleteCurrencysHandler
+  /home:
+    get:
+      description: This is the first line
+      parameters:
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: lang code
+          in: query
+          name: lang
+          type: string
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/db.ScreensResponse"
+      summary: GetHomeScreenHandler
+  /languages:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.LanguagesResponse"
+      summary: GetLanguagesHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.LanguagesRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.LanguagesRequest"
+      summary: ApplyLanguagesHandler
+  /languages/{languageId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Language ID
+          in: path
+          name: languageId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeleteLanguagesHandler
+  /onboardings:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+        - description: lang=en
+          in: query
+          name: lang
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.OnboardingResponse"
+      summary: GetOnboardingHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.OnboardingRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.OnboardingRequest"
+      summary: ApplyOnboardingHandler
+  /onboardings/{onboardingId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Onboarding ID
+          in: path
+          name: onboardingId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeletOnboardingHandler
+  /screens:
+    get:
+      description: This is the first line
+      parameters:
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: lang code
+          in: query
+          name: lang
+          type: string
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/db.ScreensResponse"
+      summary: GetScreensHandler
+  /screens/{screenId}:
+    get:
+      description: This is the first line
+      parameters:
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: lang code
+          in: query
+          name: lang
+          type: string
+        - description: Screen ID
+          in: path
+          name: screenId
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/db.ScreensResponse"
+      summary: GetScreenByID
+  /settings:
+    get:
+      description: This is the first line
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.SettingResponse"
+      summary: GetSettingHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.SettingRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.SettingRequest"
+      summary: ApplySettingHandler
+  /settings/{settingId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Setting ID
+          in: path
+          name: settingId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeletSettingHandler
+  /sliders:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: location
+          in: query
+          name: location
+          type: string
+        - description: start date
+          in: query
+          name: start_date
+          type: string
+        - description: end date
+          in: query
+          name: end_date
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.SliderResposne"
+      summary: GetSliderHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.SliderRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.SliderRequest"
+      summary: ApplySliderHandler
+  /sliders/{sliderId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: Slider ID
+          in: path
+          name: sliderId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeletSliderHandler
+  /states:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: sort order
+          in: query
+          name: sort_order
+          type: string
+        - description: status
+          in: query
+          name: status
+          type: boolean
+        - description: "The number of records to return. Default: 10"
+          in: query
+          name: limit
+          type: string
+        - description: Country name to filter
+          in: query
+          name: country_id
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.StatesResponse"
+      summary: GetStatesHandler
+    post:
+      description: This is the first line
+      parameters:
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.StatesRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.StatesRequest"
+      summary: ApplyStatesHandler
+  /states/{stateId}:
+    delete:
+      description: This is the first line
+      parameters:
+        - description: State ID
+          in: path
+          name: stateId
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: OK
+      summary: DeletStateHandler
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

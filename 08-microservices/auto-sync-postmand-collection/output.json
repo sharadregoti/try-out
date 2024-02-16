@@ -1,0 +1,3860 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Demo App",
+    "version": "1.0.0"
+  },
+  "host": "{{host}}",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/v1/account-service/accounts": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "Get accounts of a user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "GetAccounts",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "optional userId for testing",
+            "name": "user_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accounts": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "balance_decimal_formatted": {
+                        "type": "string"
+                      },
+                      "balance_formatted": {
+                        "type": "string"
+                      },
+                      "balance_main_formatted": {
+                        "type": "string"
+                      },
+                      "balance_raw": {
+                        "type": "integer"
+                      },
+                      "country_flag": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "currency_symbol": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "kyc": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "number": {
+                        "type": "string"
+                      },
+                      "provider_id": {
+                        "type": "string"
+                      },
+                      "refreshed_at": {
+                        "type": "string"
+                      },
+                      "service_status": {
+                        "type": "integer"
+                      },
+                      "symbol_left": {
+                        "type": "boolean"
+                      },
+                      "symbol_right": {
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "account-service"
+        ]
+      }
+    },
+    "/api/v1/account-service/accounts/{accountId}/transactions": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "Get accounts of a user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "GetTransanctions",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Account ID",
+            "name": "accountId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accounts": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "balance_decimal_formatted": {
+                        "type": "string"
+                      },
+                      "balance_formatted": {
+                        "type": "string"
+                      },
+                      "balance_main_formatted": {
+                        "type": "string"
+                      },
+                      "balance_raw": {
+                        "type": "integer"
+                      },
+                      "country_flag": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "currency_symbol": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "kyc": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "number": {
+                        "type": "string"
+                      },
+                      "provider_id": {
+                        "type": "string"
+                      },
+                      "refreshed_at": {
+                        "type": "string"
+                      },
+                      "service_status": {
+                        "type": "integer"
+                      },
+                      "symbol_left": {
+                        "type": "boolean"
+                      },
+                      "symbol_right": {
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "account-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "Get cards of a user",
+        "summary": "Getcards",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "optional userId for testing",
+            "name": "user_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "cards"
+              ],
+              "properties": {
+                "cards": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "current_balance": {
+                        "type": "integer"
+                      },
+                      "current_balance_formatted": {
+                        "type": "string"
+                      },
+                      "expiry": {
+                        "type": "string"
+                      },
+                      "features": {
+                        "type": "object",
+                        "properties": {
+                          "domestic": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "is_enabled": {
+                                  "type": "boolean"
+                                },
+                                "limit": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "international": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "is_enabled": {
+                                  "type": "boolean"
+                                },
+                                "limit": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "is_addon_enabled": {
+                        "type": "boolean"
+                      },
+                      "is_blocked": {
+                        "type": "boolean"
+                      },
+                      "is_reward_enabled": {
+                        "type": "boolean"
+                      },
+                      "limit": {
+                        "type": "integer"
+                      },
+                      "limit_formatted": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "number": {
+                        "type": "string"
+                      },
+                      "processor": {
+                        "type": "string"
+                      },
+                      "total_reward_points": {
+                        "type": "integer"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/block": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "BlockCard",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "isBlocked"
+              ],
+              "properties": {
+                "isBlocked": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/cvv-toogle": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "GetCardCVV",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cvv": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/features/{featuredId}/limit": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "SetFeatureLimit",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "featuredId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "limit"
+              ],
+              "properties": {
+                "limit": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/features/{featuredId}/status": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "SetFeatureStatus",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "featuredId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "isEnabled"
+              ],
+              "properties": {
+                "isEnabled": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/pin": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "SetCardPin",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "pin"
+              ],
+              "properties": {
+                "pin": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/rewards": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "GetCardRewards",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "card type",
+            "name": "card_type",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "has_more": {
+                  "type": "boolean"
+                },
+                "reward_points": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "card_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "long_description": {
+                        "type": "string"
+                      },
+                      "points": {
+                        "type": "integer"
+                      },
+                      "short_description": {
+                        "type": "string"
+                      },
+                      "transaction_id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "updated_at": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/card-service/cards/{cardId}/transactions": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "Get cards of a user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "GetTransanctions",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Card ID",
+            "name": "cardId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "has_more": {
+                  "type": "boolean"
+                },
+                "reward_points": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "card_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "long_description": {
+                        "type": "string"
+                      },
+                      "points": {
+                        "type": "integer"
+                      },
+                      "short_description": {
+                        "type": "string"
+                      },
+                      "transaction_id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "updated_at": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "card-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/beneficiaries": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "GetBeneficiaries",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "search by name, last name, phone number...",
+            "name": "search",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "beneficiaries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "country_id",
+                      "first_name",
+                      "last_name",
+                      "phone_number"
+                    ],
+                    "properties": {
+                      "country_id": {
+                        "type": "string"
+                      },
+                      "first_name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "is_enabled": {
+                        "type": "boolean"
+                      },
+                      "is_verified": {
+                        "type": "boolean"
+                      },
+                      "last_name": {
+                        "type": "string"
+                      },
+                      "middle_name": {
+                        "type": "string"
+                      },
+                      "nick_name": {
+                        "type": "string"
+                      },
+                      "phone_number": {
+                        "description": "TODO: Validate mobile number",
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      },
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "AddBeneficiary",
+        "parameters": [
+          {
+            "description": "Request body",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "country_id",
+                "first_name",
+                "last_name",
+                "phone_number"
+              ],
+              "properties": {
+                "country_id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
+                  "type": "string"
+                },
+                "middle_name": {
+                  "type": "string"
+                },
+                "nick_name": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "description": "TODO: Validate mobile number",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "country_id",
+                "first_name",
+                "last_name",
+                "phone_number"
+              ],
+              "properties": {
+                "country_id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "is_enabled": {
+                  "type": "boolean"
+                },
+                "is_verified": {
+                  "type": "boolean"
+                },
+                "last_name": {
+                  "type": "string"
+                },
+                "middle_name": {
+                  "type": "string"
+                },
+                "nick_name": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "description": "TODO: Validate mobile number",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/beneficiaries/{beneficeryId}/transfers": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "GetBeneficiaryTransfers",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "beneficeryId",
+            "name": "beneficeryId",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {},
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "transfer_mode_id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "object",
+                            "additionalProperties": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      },
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "AddBeneficiaryTransfer",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id of beneficery",
+            "name": "beneficeryId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "Request body",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "transfer_mode_id",
+                "value"
+              ],
+              "properties": {
+                "transfer_mode_id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "transfer_mode_id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/beneficiaries/{beneficeryId}/verify-otp": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "VerifyBeneficiaryOTP",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id of beneficery",
+            "name": "beneficeryId",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "Request body",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/make-transfer": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "MakeTransfer",
+        "parameters": [
+          {
+            "description": "Request body",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "amount",
+                "description",
+                "from_id",
+                "to_beneficiary_transfer_id"
+              ],
+              "properties": {
+                "amount": {
+                  "type": "number"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "from_id": {
+                  "description": "FromID can be any of cardID, accountID, walletID",
+                  "type": "string"
+                },
+                "to_beneficiary_transfer_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {},
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "beneficiary_id": {
+                          "type": "string"
+                        },
+                        "beneficiary_transfer_id": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "from_id": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/transfer-charges": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "GetTransferCharges",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Mode ID of the source",
+            "name": "from_mode_id",
+            "in": "query",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Beneficiary ID of the end beneficiary",
+            "name": "to_beneficiary_id",
+            "in": "query",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Transfer amount",
+            "name": "transfer_amount",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {},
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "beneficiary_transfer_id": {
+                            "type": "string"
+                          },
+                          "charges": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "charge_id": {
+                                  "type": "string"
+                                },
+                                "charge_name": {
+                                  "type": "string"
+                                },
+                                "charge_type": {
+                                  "type": "string"
+                                },
+                                "charge_value": {
+                                  "type": "number"
+                                },
+                                "charge_value_formatted": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "country_id": {
+                            "type": "string"
+                          },
+                          "transfer_mode_id": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/transfer-modes": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "GetTransferModes",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 20",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "countryId for testing",
+            "name": "country_id",
+            "in": "query",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "languageId for testing",
+            "name": "language_id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {},
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/transfer-service/transfer-modes/{transferModeId}/schema": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "description": "This is the first line",
+        "summary": "GetTransferModeSchema",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "transferModeId",
+            "name": "transferModeId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "json_schema",
+                "ui_schema"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "json_schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "ui_schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "transfer-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/cities": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetCitiesHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "State name to filter",
+            "name": "state_id",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "image",
+                      "location",
+                      "name",
+                      "state_id",
+                      "status",
+                      "timezone"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "state_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "timezone": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyCitiesHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "cities"
+              ],
+              "properties": {
+                "cities": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "image",
+                      "location",
+                      "name",
+                      "state_id",
+                      "status",
+                      "timezone"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "state_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "timezone": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "cities"
+              ],
+              "properties": {
+                "cities": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "image",
+                      "location",
+                      "name",
+                      "state_id",
+                      "status",
+                      "timezone"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "state_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "timezone": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/cities/{cityId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletCityHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "City ID",
+            "name": "cityId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/countries": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetCountriesHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "calling_code",
+                      "code",
+                      "currency_id",
+                      "id",
+                      "image",
+                      "local_name",
+                      "name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "calling_code": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "currency_id": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "local_name": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyCountriesHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "countries"
+              ],
+              "properties": {
+                "countries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "calling_code",
+                      "code",
+                      "currency_id",
+                      "id",
+                      "image",
+                      "local_name",
+                      "name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "calling_code": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "currency_id": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "local_name": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "countries"
+              ],
+              "properties": {
+                "countries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "calling_code",
+                      "code",
+                      "currency_id",
+                      "id",
+                      "image",
+                      "local_name",
+                      "name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "calling_code": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "currency_id": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "local_name": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/countries/{countryId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletCountryHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Country ID",
+            "name": "countryId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/currencies": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetCurrenciesHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "decimal_place",
+                      "id",
+                      "name",
+                      "status",
+                      "symbol_left",
+                      "symbol_right",
+                      "value"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "decimal_place": {
+                        "type": "integer"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "symbol_left": {
+                        "type": "string"
+                      },
+                      "symbol_right": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyCurrenciesHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "currencies"
+              ],
+              "properties": {
+                "currencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "decimal_place",
+                      "id",
+                      "name",
+                      "status",
+                      "symbol_left",
+                      "symbol_right",
+                      "value"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "decimal_place": {
+                        "type": "integer"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "symbol_left": {
+                        "type": "string"
+                      },
+                      "symbol_right": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "currencies"
+              ],
+              "properties": {
+                "currencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "decimal_place",
+                      "id",
+                      "name",
+                      "status",
+                      "symbol_left",
+                      "symbol_right",
+                      "value"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "decimal_place": {
+                        "type": "integer"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "symbol_left": {
+                        "type": "string"
+                      },
+                      "symbol_right": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/currencies/{currencyId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeleteCurrencysHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Currency ID",
+            "name": "currencyId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/home": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetHomeScreenHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "lang code",
+            "name": "lang",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "ui": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "collection": {
+                              "type": "string"
+                            },
+                            "elements": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "action": {
+                                    "type": "string"
+                                  },
+                                  "disabled": {
+                                    "type": "boolean"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "image": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "show_name": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/languages": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetLanguagesHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "alphabet",
+                      "code",
+                      "color",
+                      "id",
+                      "image",
+                      "locale",
+                      "name",
+                      "rtl",
+                      "script_name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "alphabet": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "locale": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "rtl": {
+                        "type": "boolean"
+                      },
+                      "script_name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyLanguagesHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "languages"
+              ],
+              "properties": {
+                "languages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "alphabet",
+                      "code",
+                      "color",
+                      "id",
+                      "image",
+                      "locale",
+                      "name",
+                      "rtl",
+                      "script_name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "alphabet": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "locale": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "rtl": {
+                        "type": "boolean"
+                      },
+                      "script_name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "languages"
+              ],
+              "properties": {
+                "languages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "alphabet",
+                      "code",
+                      "color",
+                      "id",
+                      "image",
+                      "locale",
+                      "name",
+                      "rtl",
+                      "script_name",
+                      "sort_order",
+                      "status"
+                    ],
+                    "properties": {
+                      "alphabet": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "locale": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "rtl": {
+                        "type": "boolean"
+                      },
+                      "script_name": {
+                        "type": "string"
+                      },
+                      "sort_order": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/languages/{languageId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeleteLanguagesHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Language ID",
+            "name": "languageId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/onboardings": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetOnboardingHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "lang=en",
+            "name": "lang",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyOnboardingHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "onboardings"
+              ],
+              "properties": {
+                "onboardings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "onboardings"
+              ],
+              "properties": {
+                "onboardings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/onboardings/{onboardingId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletOnboardingHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Onboarding ID",
+            "name": "onboardingId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/screens": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetScreensHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "lang code",
+            "name": "lang",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "ui": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "collection": {
+                              "type": "string"
+                            },
+                            "elements": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "action": {
+                                    "type": "string"
+                                  },
+                                  "disabled": {
+                                    "type": "boolean"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "image": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "show_name": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/screens/{screenId}": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetScreenByID",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "lang code",
+            "name": "lang",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Screen ID",
+            "name": "screenId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "ui": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "collection": {
+                              "type": "string"
+                            },
+                            "elements": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "action": {
+                                    "type": "string"
+                                  },
+                                  "disabled": {
+                                    "type": "boolean"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "image": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "show_name": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/settings": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetSettingHandler",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "settings"
+              ],
+              "properties": {
+                "settings": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplySettingHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "key",
+                      "value"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "key": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "key",
+                      "value"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "key": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/settings/{settingId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletSettingHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Setting ID",
+            "name": "settingId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/sliders": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetSliderHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "location",
+            "name": "location",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "start date",
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "end date",
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "action",
+                      "app_start",
+                      "description",
+                      "end_date",
+                      "id",
+                      "image",
+                      "language_id",
+                      "location",
+                      "name",
+                      "start_date",
+                      "status"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string"
+                      },
+                      "app_start": {
+                        "type": "boolean"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplySliderHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "sliders"
+              ],
+              "properties": {
+                "sliders": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "action",
+                      "app_start",
+                      "description",
+                      "end_date",
+                      "id",
+                      "image",
+                      "language_id",
+                      "location",
+                      "name",
+                      "start_date",
+                      "status"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string"
+                      },
+                      "app_start": {
+                        "type": "boolean"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "sliders"
+              ],
+              "properties": {
+                "sliders": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "action",
+                      "app_start",
+                      "description",
+                      "end_date",
+                      "id",
+                      "image",
+                      "language_id",
+                      "location",
+                      "name",
+                      "start_date",
+                      "status"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string"
+                      },
+                      "app_start": {
+                        "type": "boolean"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "end_date": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "language_id": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "start_date": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/sliders/{sliderId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletSliderHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "Slider ID",
+            "name": "sliderId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/states": {
+      "get": {
+        "description": "This is the first line",
+        "summary": "GetStatesHandler",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Id to start after",
+            "name": "starting_after",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Id to start before",
+            "name": "ending_before",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "sort order",
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "description": "status",
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "The number of records to return. Default: 10",
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Country name to filter",
+            "name": "country_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "country_id",
+                      "created_at",
+                      "id",
+                      "name",
+                      "status"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "country_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                },
+                "has_more": {
+                  "type": "boolean"
+                },
+                "next_cursor": {
+                  "type": "string"
+                },
+                "previous_cursor": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      },
+      "post": {
+        "description": "This is the first line",
+        "summary": "ApplyStatesHandler",
+        "parameters": [
+          {
+            "description": "query params",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "states"
+              ],
+              "properties": {
+                "states": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "country_id",
+                      "created_at",
+                      "id",
+                      "name",
+                      "status"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "country_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "required": [
+                "states"
+              ],
+              "properties": {
+                "states": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "country_id",
+                      "created_at",
+                      "id",
+                      "name",
+                      "status"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "country_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    },
+    "/api/v1/master-service/states/{stateId}": {
+      "delete": {
+        "description": "This is the first line",
+        "summary": "DeletStateHandler",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "State ID",
+            "name": "stateId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "master-service"
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

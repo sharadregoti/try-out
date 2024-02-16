@@ -1,0 +1,485 @@
+definitions:
+  customtypes.JSONB:
+    additionalProperties: true
+    type: object
+  db.GetCharge:
+    properties:
+      charge_id:
+        type: string
+      charge_name:
+        type: string
+      charge_type:
+        type: string
+      charge_value:
+        type: number
+      charge_value_formatted:
+        type: string
+    type: object
+  db.GetMode:
+    properties:
+      code:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      name:
+        type: string
+    type: object
+  db.GetTransferWithCharge:
+    properties:
+      beneficiary_transfer_id:
+        type: string
+      charges:
+        items:
+          $ref: "#/definitions/db.GetCharge"
+        type: array
+      country_id:
+        type: string
+      transfer_mode_id:
+        type: string
+    type: object
+  http.AddBeneficiaryRequest:
+    properties:
+      country_id:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      middle_name:
+        type: string
+      nick_name:
+        type: string
+      phone_number:
+        description: "TODO: Validate mobile number"
+        type: string
+    required:
+      - country_id
+      - first_name
+      - last_name
+      - phone_number
+    type: object
+  http.AddBeneficiaryTransfer:
+    properties:
+      transfer_mode_id:
+        type: string
+      value:
+        additionalProperties: true
+        type: object
+    required:
+      - transfer_mode_id
+      - value
+    type: object
+  http.BeneficiariesResponse:
+    properties:
+      beneficiaries:
+        items:
+          $ref: "#/definitions/http.BeneficiaryResponse"
+        type: array
+      has_more:
+        type: boolean
+    type: object
+  http.BeneficiaryResponse:
+    properties:
+      country_id:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: string
+      is_enabled:
+        type: boolean
+      is_verified:
+        type: boolean
+      last_name:
+        type: string
+      middle_name:
+        type: string
+      nick_name:
+        type: string
+      phone_number:
+        description: "TODO: Validate mobile number"
+        type: string
+    required:
+      - country_id
+      - first_name
+      - last_name
+      - phone_number
+    type: object
+  http.BeneficiaryTransferResponse:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      transfer_mode_id:
+        type: string
+      value:
+        additionalProperties: true
+        type: object
+    type: object
+  http.BeneficiaryVerifyOTP:
+    properties:
+      code:
+        type: integer
+    required:
+      - code
+    type: object
+  http.EmptyResponse:
+    type: object
+  http.HTTPSuccessResponse:
+    properties:
+      data: {}
+      has_more:
+        type: boolean
+      message:
+        type: string
+    type: object
+  http.MakeTransfer:
+    properties:
+      amount:
+        type: number
+      description:
+        type: string
+      from_id:
+        description: FromID can be any of cardID, accountID, walletID
+        type: string
+      to_beneficiary_transfer_id:
+        type: string
+    required:
+      - amount
+      - description
+      - from_id
+      - to_beneficiary_transfer_id
+    type: object
+  http.TransferModeSchemaResponse:
+    properties:
+      id:
+        type: string
+      json_schema:
+        $ref: "#/definitions/customtypes.JSONB"
+      ui_schema:
+        $ref: "#/definitions/customtypes.JSONB"
+    required:
+      - json_schema
+      - ui_schema
+    type: object
+  services.CreateTransferOrderResponse:
+    properties:
+      amount:
+        type: integer
+      beneficiary_id:
+        type: string
+      beneficiary_transfer_id:
+        type: string
+      description:
+        type: string
+      from_id:
+        type: string
+      id:
+        type: string
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is monak server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Monak Transfer Service API
+  version: "1.0"
+"basePath": "/api/v1/transfer-service"
+paths:
+  /beneficiaries:
+    get:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: search by name, last name, phone number...
+          in: query
+          name: search
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.BeneficiariesResponse"
+      security:
+        - Bearer: []
+      summary: GetBeneficiaries
+    post:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Request body
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.AddBeneficiaryRequest"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.BeneficiaryResponse"
+      security:
+        - Bearer: []
+      summary: AddBeneficiary
+  /beneficiaries/{beneficeryId}/transfers:
+    get:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: beneficeryId
+          in: path
+          name: beneficeryId
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+              - $ref: "#/definitions/http.HTTPSuccessResponse"
+              - properties:
+                  data:
+                    items:
+                      $ref: "#/definitions/http.BeneficiaryTransferResponse"
+                    type: array
+                type: object
+      security:
+        - Bearer: []
+      summary: GetBeneficiaryTransfers
+    post:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Id of beneficery
+          in: path
+          name: beneficeryId
+          required: true
+          type: string
+        - description: Request body
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.AddBeneficiaryTransfer"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.BeneficiaryTransferResponse"
+      security:
+        - Bearer: []
+      summary: AddBeneficiaryTransfer
+  /beneficiaries/{beneficeryId}/verify-otp:
+    post:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Id of beneficery
+          in: path
+          name: beneficeryId
+          required: true
+          type: string
+        - description: Request body
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.BeneficiaryVerifyOTP"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.EmptyResponse"
+      security:
+        - Bearer: []
+      summary: VerifyBeneficiaryOTP
+  /make-transfer:
+    post:
+      consumes:
+        - application/json
+      description: This is the first line
+      parameters:
+        - description: Request body
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.MakeTransfer"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+              - $ref: "#/definitions/http.HTTPSuccessResponse"
+              - properties:
+                  data:
+                    $ref: "#/definitions/services.CreateTransferOrderResponse"
+                type: object
+      security:
+        - Bearer: []
+      summary: MakeTransfer
+  /transfer-charges:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: Mode ID of the source
+          in: query
+          name: from_mode_id
+          required: true
+          type: string
+        - description: Beneficiary ID of the end beneficiary
+          in: query
+          name: to_beneficiary_id
+          required: true
+          type: string
+        - description: Transfer amount
+          in: query
+          name: transfer_amount
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+              - $ref: "#/definitions/http.HTTPSuccessResponse"
+              - properties:
+                  data:
+                    items:
+                      $ref: "#/definitions/db.GetTransferWithCharge"
+                    type: array
+                type: object
+      security:
+        - Bearer: []
+      summary: GetTransferCharges
+  /transfer-modes:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: countryId for testing
+          in: query
+          name: country_id
+          required: true
+          type: string
+        - description: languageId for testing
+          in: query
+          name: language_id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+              - $ref: "#/definitions/http.HTTPSuccessResponse"
+              - properties:
+                  data:
+                    items:
+                      $ref: "#/definitions/db.GetMode"
+                    type: array
+                type: object
+      security:
+        - Bearer: []
+      summary: GetTransferModes
+  /transfer-modes/{transferModeId}/schema:
+    get:
+      description: This is the first line
+      parameters:
+        - description: transferModeId
+          in: path
+          name: transferModeId
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.TransferModeSchemaResponse"
+      security:
+        - Bearer: []
+      summary: GetTransferModeSchema
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,763 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is monak server.",
+        "title": "Monak Transfer Service API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/api/v1/transfer-service",
+    "paths": {
+        "/beneficiaries": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "GetBeneficiaries",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "search by name, last name, phone number...",
+                        "name": "search",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 20",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.BeneficiariesResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "AddBeneficiary",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.AddBeneficiaryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.BeneficiaryResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/beneficiaries/{beneficeryId}/transfers": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "GetBeneficiaryTransfers",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 20",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "beneficeryId",
+                        "name": "beneficeryId",
+                        "required": true,
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/http.HTTPSuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/http.BeneficiaryTransferResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "AddBeneficiaryTransfer",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id of beneficery",
+                        "name": "beneficeryId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.AddBeneficiaryTransfer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.BeneficiaryTransferResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/beneficiaries/{beneficeryId}/verify-otp": {
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "VerifyBeneficiaryOTP",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id of beneficery",
+                        "name": "beneficeryId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.BeneficiaryVerifyOTP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.EmptyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/make-transfer": {
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "MakeTransfer",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/http.MakeTransfer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/http.HTTPSuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/services.CreateTransferOrderResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/transfer-charges": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "summary": "GetTransferCharges",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 20",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Mode ID of the source",
+                        "name": "from_mode_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Beneficiary ID of the end beneficiary",
+                        "name": "to_beneficiary_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Transfer amount",
+                        "name": "transfer_amount",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/http.HTTPSuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/db.GetTransferWithCharge"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/transfer-modes": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "summary": "GetTransferModes",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Id to start after",
+                        "name": "starting_after",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Id to start before",
+                        "name": "ending_before",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The number of records to return. Default: 20",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "countryId for testing",
+                        "name": "country_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "languageId for testing",
+                        "name": "language_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/http.HTTPSuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/db.GetMode"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/transfer-modes/{transferModeId}/schema": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "This is the first line",
+                "summary": "GetTransferModeSchema",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "transferModeId",
+                        "name": "transferModeId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/http.TransferModeSchemaResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "customtypes.JSONB": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "db.GetCharge": {
+            "type": "object",
+            "properties": {
+                "charge_id": {
+                    "type": "string"
+                },
+                "charge_name": {
+                    "type": "string"
+                },
+                "charge_type": {
+                    "type": "string"
+                },
+                "charge_value": {
+                    "type": "number"
+                },
+                "charge_value_formatted": {
+                    "type": "string"
+                }
+            }
+        },
+        "db.GetMode": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "db.GetTransferWithCharge": {
+            "type": "object",
+            "properties": {
+                "beneficiary_transfer_id": {
+                    "type": "string"
+                },
+                "charges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/db.GetCharge"
+                    }
+                },
+                "country_id": {
+                    "type": "string"
+                },
+                "transfer_mode_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "http.AddBeneficiaryRequest": {
+            "type": "object",
+            "required": [
+                "country_id",
+                "first_name",
+                "last_name",
+                "phone_number"
+            ],
+            "properties": {
+                "country_id": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "middle_name": {
+                    "type": "string"
+                },
+                "nick_name": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "description": "TODO: Validate mobile number",
+                    "type": "string"
+                }
+            }
+        },
+        "http.AddBeneficiaryTransfer": {
+            "type": "object",
+            "required": [
+                "transfer_mode_id",
+                "value"
+            ],
+            "properties": {
+                "transfer_mode_id": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
+        "http.BeneficiariesResponse": {
+            "type": "object",
+            "properties": {
+                "beneficiaries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/http.BeneficiaryResponse"
+                    }
+                },
+                "has_more": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "http.BeneficiaryResponse": {
+            "type": "object",
+            "required": [
+                "country_id",
+                "first_name",
+                "last_name",
+                "phone_number"
+            ],
+            "properties": {
+                "country_id": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "is_enabled": {
+                    "type": "boolean"
+                },
+                "is_verified": {
+                    "type": "boolean"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "middle_name": {
+                    "type": "string"
+                },
+                "nick_name": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "description": "TODO: Validate mobile number",
+                    "type": "string"
+                }
+            }
+        },
+        "http.BeneficiaryTransferResponse": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "transfer_mode_id": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
+        "http.BeneficiaryVerifyOTP": {
+            "type": "object",
+            "required": [
+                "code"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer"
+                }
+            }
+        },
+        "http.EmptyResponse": {
+            "type": "object"
+        },
+        "http.HTTPSuccessResponse": {
+            "type": "object",
+            "properties": {
+                "data": {},
+                "has_more": {
+                    "type": "boolean"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "http.MakeTransfer": {
+            "type": "object",
+            "required": [
+                "amount",
+                "description",
+                "from_id",
+                "to_beneficiary_transfer_id"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "from_id": {
+                    "description": "FromID can be any of cardID, accountID, walletID",
+                    "type": "string"
+                },
+                "to_beneficiary_transfer_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "http.TransferModeSchemaResponse": {
+            "type": "object",
+            "required": [
+                "json_schema",
+                "ui_schema"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "json_schema": {
+                    "$ref": "#/definitions/customtypes.JSONB"
+                },
+                "ui_schema": {
+                    "$ref": "#/definitions/customtypes.JSONB"
+                }
+            }
+        },
+        "services.CreateTransferOrderResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer"
+                },
+                "beneficiary_id": {
+                    "type": "string"
+                },
+                "beneficiary_transfer_id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "from_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

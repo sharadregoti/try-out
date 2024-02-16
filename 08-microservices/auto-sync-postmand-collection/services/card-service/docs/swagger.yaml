@@ -1,0 +1,367 @@
+definitions:
+  http.BlockCardRequest:
+    properties:
+      isBlocked:
+        type: boolean
+    required:
+      - isBlocked
+    type: object
+  http.Card:
+    properties:
+      created_at:
+        type: string
+      current_balance:
+        type: integer
+      current_balance_formatted:
+        type: string
+      expiry:
+        type: string
+      features:
+        $ref: "#/definitions/http.CardFeatures"
+      id:
+        type: string
+      is_addon_enabled:
+        type: boolean
+      is_blocked:
+        type: boolean
+      is_reward_enabled:
+        type: boolean
+      limit:
+        type: integer
+      limit_formatted:
+        type: string
+      name:
+        type: string
+      number:
+        type: string
+      processor:
+        type: string
+      total_reward_points:
+        type: integer
+      type:
+        type: string
+    type: object
+  http.CardCVVResponse:
+    properties:
+      cvv:
+        type: integer
+    type: object
+  http.CardFeature:
+    properties:
+      id:
+        type: string
+      is_enabled:
+        type: boolean
+      limit:
+        type: integer
+      name:
+        type: string
+    type: object
+  http.CardFeatures:
+    properties:
+      domestic:
+        items:
+          $ref: "#/definitions/http.CardFeature"
+        type: array
+      international:
+        items:
+          $ref: "#/definitions/http.CardFeature"
+        type: array
+    type: object
+  http.CardsResponse:
+    properties:
+      cards:
+        items:
+          $ref: "#/definitions/http.Card"
+        type: array
+      has_more:
+        type: boolean
+    required:
+      - cards
+    type: object
+  http.EmptyResponse:
+    type: object
+  http.SetFeatureEnableRequest:
+    properties:
+      isEnabled:
+        type: boolean
+    required:
+      - isEnabled
+    type: object
+  http.SetFeatureLimitRequest:
+    properties:
+      limit:
+        type: integer
+    required:
+      - limit
+    type: object
+  http.SetPinRequest:
+    properties:
+      pin:
+        type: integer
+    required:
+      - pin
+    type: object
+  services.GetRewardPointsResponse:
+    properties:
+      has_more:
+        type: boolean
+      reward_points:
+        items:
+          $ref: "#/definitions/services.RewardPoint"
+        type: array
+    type: object
+  services.RewardPoint:
+    properties:
+      card_id:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      long_description:
+        type: string
+      points:
+        type: integer
+      short_description:
+        type: string
+      transaction_id:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is monak server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Monak B2C API
+  version: "1.0"
+"basePath": "/api/v1/card-service"
+paths:
+  /cards:
+    get:
+      description: Get cards of a user
+      parameters:
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: optional userId for testing
+          in: query
+          name: user_id
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CardsResponse"
+      security:
+        - Bearer: []
+      summary: Getcards
+  /cards/{cardId}/block:
+    post:
+      description: This is the first line
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.BlockCardRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.EmptyResponse"
+      security:
+        - Bearer: []
+      summary: BlockCard
+  /cards/{cardId}/cvv-toogle:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.CardCVVResponse"
+      security:
+        - Bearer: []
+      summary: GetCardCVV
+  /cards/{cardId}/features/{featuredId}/limit:
+    post:
+      description: This is the first line
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+        - description: Card ID
+          in: path
+          name: featuredId
+          required: true
+          type: string
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.SetFeatureLimitRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.EmptyResponse"
+      security:
+        - Bearer: []
+      summary: SetFeatureLimit
+  /cards/{cardId}/features/{featuredId}/status:
+    post:
+      description: This is the first line
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+        - description: Card ID
+          in: path
+          name: featuredId
+          required: true
+          type: string
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.SetFeatureEnableRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.EmptyResponse"
+      security:
+        - Bearer: []
+      summary: SetFeatureStatus
+  /cards/{cardId}/pin:
+    post:
+      description: This is the first line
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+        - description: query params
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/http.SetPinRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/http.EmptyResponse"
+      security:
+        - Bearer: []
+      summary: SetCardPin
+  /cards/{cardId}/rewards:
+    get:
+      description: This is the first line
+      parameters:
+        - description: Id to start after
+          in: query
+          name: start_date
+          type: string
+        - description: Id to start before
+          in: query
+          name: end_date
+          type: string
+        - description: card type
+          in: query
+          name: card_type
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+        - description: card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/services.GetRewardPointsResponse"
+      security:
+        - Bearer: []
+      summary: GetCardRewards
+  /cards/{cardId}/transactions:
+    get:
+      consumes:
+        - application/json
+      description: Get cards of a user
+      parameters:
+        - description: Card ID
+          in: path
+          name: cardId
+          required: true
+          type: string
+        - description: Id to start after
+          in: query
+          name: starting_after
+          type: string
+        - description: Id to start before
+          in: query
+          name: ending_before
+          type: string
+        - description: "The number of records to return. Default: 20"
+          in: query
+          name: limit
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/services.GetRewardPointsResponse"
+      security:
+        - Bearer: []
+      summary: GetTransanctions
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
