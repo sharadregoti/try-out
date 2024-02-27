@@ -137,12 +137,12 @@ info:
     email: support@swagger.io
     name: API Support
     url: http://www.swagger.io/support
-  description: This is monak server.
+  description: This is  server.
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://swagger.io/terms/
-  title: Monak B2C API
+  title: B2C API
   version: "1.0"
 "basePath": "/api/v1/card-service"
 paths:
