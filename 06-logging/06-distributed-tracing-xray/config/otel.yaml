@@ -1,0 +1,19 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+exporters:
+  awsxray:
+    # you can add additional configuration here
+    # for example configure sending traces to AWS X-Ray in a specific region
+    region: ap-south-1
+service:
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      exporters:
+        - awsxray

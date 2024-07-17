@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  aws-adot:
+    image: public.ecr.aws/aws-observability/aws-otel-collector:latest
+    container_name: aws-adot
+    ports:
+      - "4317:4317" # Grpc port
+      - "4318:4318" # Http port
+      - "55679:55679"
+    volumes:
+      - "./otel.yaml:/otel.yaml"
+    environment:
+      - AWS_REGION=ap-south-1
+      - AWS_ACCESS_KEY_ID=""
+      - AWS_SECRET_ACCESS_KEY=""
+    command: ["--config", "/otel.yaml"]
+    restart: "no"
+
+  fluent-bit:
+    image: cr.fluentbit.io/fluent/fluent-bit:2.0
+    container_name: fluent-bit
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf"
+    restart: "no"
+
+  trace-generator:
+    image: sharadregoti/trace-generator:v0.1.0
+    container_name: trace-generator
+    ports:
+      - "5000:5000"
+    environment:
+      - OTEL_HOST_ADDR=fluent-bit:3000
+    restart: "no"

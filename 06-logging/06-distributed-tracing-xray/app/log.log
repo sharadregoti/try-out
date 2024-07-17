@@ -1,0 +1,71 @@
+2024-02-28 12:41:13,528 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-28 12:41:36,183 - __main__ - INFO - Generating trace 1d769b956944015d6328a4d816318b6d
+2024-02-28 12:41:36,184 - __main__ - INFO - Log message from trace 1d769b956944015d6328a4d816318b6d
+2024-02-28 12:41:36,184 - __main__ - INFO - Counter value from trace 1d769b956944015d6328a4d816318b6d: 6
+2024-02-28 23:40:52,953 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-28 23:41:18,151 - __main__ - INFO - Generating trace c5a5d5334e281f8d5a2ad2a93d06ae56
+2024-02-28 23:41:18,152 - __main__ - INFO - Log message from trace c5a5d5334e281f8d5a2ad2a93d06ae56
+2024-02-28 23:41:18,152 - __main__ - INFO - Counter value from trace c5a5d5334e281f8d5a2ad2a93d06ae56: 2
+2024-02-28 23:44:05,537 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-28 23:44:08,295 - __main__ - INFO - Generating trace 9cae17a085542aca6632c651d24aba61
+2024-02-28 23:44:08,295 - __main__ - INFO - Log message from trace 9cae17a085542aca6632c651d24aba61
+2024-02-28 23:44:08,296 - __main__ - INFO - Counter value from trace 9cae17a085542aca6632c651d24aba61: 5
+2024-02-28 23:46:24,600 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-28 23:46:27,233 - __main__ - INFO - Generating trace 742c0d430562e6b0e374c526d9e78fd9
+2024-02-28 23:46:27,233 - __main__ - INFO - Log message from trace 742c0d430562e6b0e374c526d9e78fd9
+2024-02-28 23:46:27,233 - __main__ - INFO - Counter value from trace 742c0d430562e6b0e374c526d9e78fd9: 10
+2024-02-28 23:53:37,936 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-28 23:53:40,462 - __main__ - INFO - Generating trace e3d25255e4bca0043b5c7f082b0f108f
+2024-02-28 23:53:40,463 - __main__ - INFO - Log message from trace e3d25255e4bca0043b5c7f082b0f108f
+2024-02-28 23:53:40,463 - __main__ - INFO - Counter value from trace e3d25255e4bca0043b5c7f082b0f108f: 8
+2024-02-29 00:03:44,480 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-29 00:04:09,911 - __main__ - INFO - Generating trace 75221b1865159ad1d39098e3e57e6d12
+2024-02-29 00:04:09,911 - __main__ - INFO - Log message from trace 75221b1865159ad1d39098e3e57e6d12
+2024-02-29 00:04:09,912 - __main__ - INFO - Counter value from trace 75221b1865159ad1d39098e3e57e6d12: 10
+2024-02-29 22:04:18,654 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-29 22:04:22,713 - __main__ - INFO - Generating trace ccf1a9e435f984628dcdfb1b9ea3f79d
+2024-02-29 22:04:22,714 - __main__ - INFO - Log message from trace ccf1a9e435f984628dcdfb1b9ea3f79d
+2024-02-29 22:04:22,714 - __main__ - INFO - Counter value from trace ccf1a9e435f984628dcdfb1b9ea3f79d: 0
+2024-02-29 22:51:14,387 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-29 22:51:19,705 - __main__ - INFO - Generating trace 815af41f341af7945544109547153191
+2024-02-29 22:51:19,706 - __main__ - INFO - Log message from trace 815af41f341af7945544109547153191
+2024-02-29 22:51:19,706 - __main__ - INFO - Counter value from trace 815af41f341af7945544109547153191: 0
+2024-02-29 22:53:26,279 - __main__ - INFO - Generating trace af2812901d00769c1cb0a923e63549b3
+2024-02-29 22:53:26,280 - __main__ - INFO - Log message from trace af2812901d00769c1cb0a923e63549b3
+2024-02-29 22:53:26,280 - __main__ - INFO - Counter value from trace af2812901d00769c1cb0a923e63549b3: 9
+2024-02-29 22:54:11,067 - __main__ - INFO - Generating trace 885327a671fcfd95f44bc043fcc6151c
+2024-02-29 22:54:11,068 - __main__ - INFO - Log message from trace 885327a671fcfd95f44bc043fcc6151c
+2024-02-29 22:54:11,069 - __main__ - INFO - Counter value from trace 885327a671fcfd95f44bc043fcc6151c: 10
+2024-02-29 22:58:03,637 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-29 22:58:09,601 - __main__ - INFO - Generating trace af89c0bc51f2d00cf20bb3afd857ebd9
+2024-02-29 22:58:09,602 - __main__ - INFO - Log message from trace af89c0bc51f2d00cf20bb3afd857ebd9
+2024-02-29 23:00:04,242 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-02-29 23:00:10,027 - __main__ - INFO - Generating trace 02167f7eb708d95e87f46fec5db1d257
+2024-02-29 23:00:10,028 - __main__ - INFO - Log message from trace 02167f7eb708d95e87f46fec5db1d257
+2024-02-29 23:01:43,864 - __main__ - INFO - Generating trace ca9d0be0aa25204de6ffef14364e6203
+2024-02-29 23:01:43,865 - __main__ - INFO - Log message from trace ca9d0be0aa25204de6ffef14364e6203
+2024-03-01 23:20:23,655 - __main__ - INFO - API Version: 1.23.0
+SDK Version: 1.23.0
+OTLP Exporter Version: 1.23.0
+2024-03-01 23:20:27,429 - __main__ - INFO - Generating trace 357451a667fe8bbb366f334627f77cc8
+2024-03-01 23:20:27,430 - __main__ - INFO - Log message from trace 357451a667fe8bbb366f334627f77cc8
